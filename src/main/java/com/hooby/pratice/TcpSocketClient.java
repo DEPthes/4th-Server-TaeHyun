@@ -55,7 +55,7 @@ public class TcpSocketClient {
 
     public static void main(String[] args) throws IOException {
         String serverName = "localhost";
-        int serverPort = 8080;
+        int serverPort = 12000;
 
         TcpSocketClient client = new TcpSocketClient(serverName, serverPort);
         client.start();
