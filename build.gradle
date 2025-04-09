@@ -12,6 +12,16 @@ repositories {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // Logging
+    implementation 'ch.qos.logback:logback-classic:1.4.12'
+    implementation 'org.slf4j:slf4j-api:1.7.36'
+
+    // Test
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+
+    // JSON
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
 }
 
 test {
