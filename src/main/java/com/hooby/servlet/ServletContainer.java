@@ -22,6 +22,23 @@ public class ServletContainer {
         this.servletInitializer = servletInitializer;
     }
 
+    public CustomHttpResponse dispatch(CustomHttpRequest request) {
+        CustomHttpResponse response = new CustomHttpResponse();
+
+        ServletMapper.MappingResult result = servletMapper.map(request.getPath());
+
+        if (result == null) {
+            response.setStatus(HttpStatus.NOT_FOUND);
+            response.setBody("Not Found");
+        } else {
+            request.setPathParams(result.pathParams());
+            Servlet servlet = servletInitializer.getOrCreate(result.servletName());
+            servlet.service(request, response);
+        }
+
+        return response;
+    }
+
     public void start(int port) throws Exception {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             logger.info("🟢 HTTP Server is listening on port {}", port);
