@@ -2,6 +2,7 @@ package com.hooby;
 
 import com.hooby.servlet.TestServlet;
 import com.hooby.servlet.ServletContainer;
+import com.hooby.servlet.TestUserServlet;
 import com.hooby.servlet.UserServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +16,11 @@ public class Main {
 
             // /hello 경로에 대한 Servlet 등록
             container.registerServlet("/hello", new TestServlet());
-            container.registerServlet("/users", new UserServlet());
+            container.registerServlet("/user/{id}", new TestUserServlet());
+
+            UserServlet userServlet = new UserServlet();
+            container.registerServlet("/users/{id}", userServlet);
+            container.registerServlet("/users", userServlet);
 
             // 서버 실행
             container.start(8080); // 브라우저에서 http://localhost:8080/hello 로 접속 가능

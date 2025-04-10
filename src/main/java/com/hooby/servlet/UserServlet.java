@@ -16,100 +16,138 @@ public class UserServlet implements Servlet {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
-    public void service(CustomHttpRequest request, CustomHttpResponse response) {
-        switch (request.getMethod()) {
-            case "GET" -> handleGet(request, response);
-            case "POST" -> handlePost(request, response);
-            case "PUT" -> handlePut(request, response);
-            case "PATCH" -> handlePatch(request, response);
-            case "DELETE" -> handleDelete(request, response);
-            default -> {
-                response.setStatus(405);
-                response.setBody("Method Not Allowed");
+    public void service(CustomHttpRequest req, CustomHttpResponse res) {
+        String id = req.getPathParams().get("id"); // id 에 매칭되는 값을 저장
+        String method = req.getMethod();
+        try{
+            switch (req.getMethod()) {
+                case "GET" -> {
+                    if (id == null) getAllUsers(req, res);
+                    else getUserById(id, res);
+                }
+                case "POST" -> createUser(req, res);
+                case "PUT" -> updateUser(id, req, res);
+                case "PATCH" -> patchUser(id, req, res);
+                case "DELETE" -> {
+                    if (id == null) deleteAllUsers(res);
+                    else deleteUserById(id, res);
+                }
+                default -> {
+                    res.setStatus(HttpStatus.METHOD_NOT_ALLOWED);
+                    res.setBody("Method Not Allowed");
+                }
             }
+        } catch (Exception e){
+            res.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+            res.setBody("Internal Server Error: " + e.getMessage());
         }
     }
 
-    private void handleGet(CustomHttpRequest req, CustomHttpResponse resp) {
-        Map<String, Object> body = req.getJsonBody();
+    // 여기에 GetMapping 어노테이션 이런거 달고 싶다..
+    private void getAllUsers(CustomHttpRequest req, CustomHttpResponse res) throws Exception {
+        String q = req.getQueryParams().get("q");
+        String ageFilter = req.getQueryParams().get("age");
 
-        try {
-            String json = objectMapper.writeValueAsString(userDb.values());
-            resp.setStatus(HttpStatus.OK);
-            resp.setHeader("Content-Type", "application/json");
-            resp.setBody(json);
-        } catch (Exception e) {
-            resp.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
-            resp.setBody("Serialization error");
-        }
+        System.out.println("DEBUG: query q = " + q);
+
+        var result = userDb.values().stream()
+                .filter(user -> q == null || user.get("name").toString().contains(q))
+                .filter(user -> ageFilter == null || user.get("age").toString().equals(ageFilter))
+                .toList();
+
+        String json = objectMapper.writeValueAsString(result);
+        res.setStatus(HttpStatus.OK);
+        res.setHeader("Content-Type", "application/json");
+        res.setBody(json);
     }
 
-    private void handlePost(CustomHttpRequest req, CustomHttpResponse resp) {
+    private void getUserById(String id, CustomHttpResponse res) throws Exception {
+        if(!userDb.containsKey(id)) {
+            res.setStatus(HttpStatus.NOT_FOUND);
+            res.setBody("User not found" + id);
+            return;
+        }
+        String json = objectMapper.writeValueAsString(userDb.get(id));
+        res.setStatus(HttpStatus.OK);
+        res.setHeader("Content-Type", "application/json");
+        res.setBody(json);
+    }
+
+    private void createUser(CustomHttpRequest req, CustomHttpResponse res){
         Map<String, Object> body = req.getJsonBody();
         String id = (String) body.get("id");
 
         if (id == null || body.get("name") == null || body.get("age") == null) {
-            resp.setStatus(HttpStatus.BAD_REQUEST);
-            resp.setBody("Missing fields: id, name, age are required");
+            res.setStatus(HttpStatus.BAD_REQUEST);
+            res.setBody("Missing fields: id, name, age");
             return;
         }
 
         if (userDb.containsKey(id)) {
-            resp.setStatus(HttpStatus.CONFLICT);
-            resp.setBody("User already exists");
+            res.setStatus(HttpStatus.CONFLICT);
+            res.setBody("User already exists");
             return;
         }
 
         userDb.put(id, body);
-        resp.setStatus(HttpStatus.CREATED);
-        resp.setBody("User created");
+        res.setStatus(HttpStatus.CREATED);
+        res.setBody("User created");
     }
 
-    private void handlePut(CustomHttpRequest req, CustomHttpResponse resp) {
-        Map<String, Object> body = req.getJsonBody();
-        String id = (String) body.get("id");
-
-        if (id == null || body.get("name") == null || body.get("age") == null) {
-            resp.setStatus(HttpStatus.BAD_REQUEST);
-            resp.setBody("Missing fields: id, name, age are required");
-            return;
-        }
-
-        if (!userDb.containsKey(id)) {
-            resp.setStatus(HttpStatus.NOT_FOUND);
-            resp.setBody("User not found");
-            return;
-        }
-
-        userDb.put(id, body);
-        resp.setStatus(HttpStatus.OK);
-        resp.setBody("User updated");
-    }
-
-    private void handlePatch(CustomHttpRequest req, CustomHttpResponse resp) {
-        Map<String, Object> body = req.getJsonBody();
-        String id = (String) body.get("id");
-
+    private void updateUser(String id, CustomHttpRequest req, CustomHttpResponse res) {
         if (id == null || !userDb.containsKey(id)) {
-            resp.setStatus(HttpStatus.NOT_FOUND);
-            resp.setBody("User not found");
+            res.setStatus(HttpStatus.NOT_FOUND);
+            res.setBody("User not found");
+            return;
+        }
+
+        Map<String, Object> body = req.getJsonBody();
+        if (body.get("name") == null || body.get("age") == null) {
+            res.setStatus(HttpStatus.BAD_REQUEST);
+            res.setBody("Missing fields: name, age");
+            return;
+        }
+
+        body.put("id", id); // URI 기준 ID 강제 고정
+        userDb.put(id, body);
+        res.setStatus(HttpStatus.OK);
+        res.setBody("User updated");
+    }
+
+    private void patchUser(String id, CustomHttpRequest req, CustomHttpResponse res) {
+        if (id == null || !userDb.containsKey(id)) {
+            res.setStatus(HttpStatus.NOT_FOUND);
+            res.setBody("User not found");
             return;
         }
 
         Map<String, Object> user = userDb.get(id);
+        Map<String, Object> body = req.getJsonBody();
         body.forEach((key, value) -> {
             if (!"id".equals(key)) {
                 user.put(key, value);
             }
         });
 
-        resp.setStatus(HttpStatus.OK);
-        resp.setBody("User partially updated");
+        res.setStatus(HttpStatus.OK);
+        res.setBody("User partially updated");
     }
 
-    private void handleDelete(CustomHttpRequest req, CustomHttpResponse resp) {
+    private void deleteAllUsers(CustomHttpResponse res) {
         userDb.clear();
-        resp.setStatus(HttpStatus.OK);
-        resp.setBody("All users deleted");
+        res.setStatus(HttpStatus.OK);
+        res.setBody("All users deleted");
+    }
+
+    private void deleteUserById(String id, CustomHttpResponse res) {
+        if (!userDb.containsKey(id)) {
+            res.setStatus(HttpStatus.NOT_FOUND);
+            res.setBody("User not found");
+            return;
+        }
+
+        userDb.remove(id);
+        res.setStatus(HttpStatus.OK);
+        res.setBody("User deleted");
     }
 }
