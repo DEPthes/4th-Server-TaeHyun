@@ -3,29 +3,32 @@ package com.hooby.servlet;
 import com.hooby.http.CustomHttpRequest;
 import com.hooby.http.CustomHttpResponse;
 import com.hooby.http.HttpStatus;
+import com.hooby.routing.RouteMatcher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.DataOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ServletContainer {
     private static final Logger logger = LoggerFactory.getLogger(ServletContainer.class);
 
     private static final ServletContainer instance = new ServletContainer();
-    private final Map<String, Servlet> servletMapping = new HashMap<>();
-
+    private final List<RouteBinding> routes = new ArrayList<>();
+    
     private ServletContainer() {}
 
     public static ServletContainer getInstance() {
         return instance;
     }
 
-    public void registerServlet(String path, Servlet servlet){
-        servletMapping.put(path, servlet);
+    public void registerServlet(String pattern, Servlet servlet) {
+        routes.add(new RouteBinding(new RouteMatcher(pattern), servlet));
     }
 
     public void start(int port) throws Exception {
@@ -42,20 +45,25 @@ public class ServletContainer {
                     // response 를 위한 객체를 생성
                     CustomHttpResponse response = new CustomHttpResponse();
 
-                    Servlet servlet = servletMapping.get(request.getPath()); // Servlet 찾기
+                    boolean matched = false;
 
-                    if (servlet != null) {
-                        servlet.service(request, response);
-                    } else {
+                    for (RouteBinding binding : routes) {
+                        Map<String, String> pathParams = binding.matcher.match(request.getPath());
+                        if (pathParams != null) {
+                            request.setPathParams(pathParams);
+                            binding.servlet.service(request, response);
+                            matched = true;
+                            break;
+                        }
+                    }
+
+                    if (!matched) {
                         response.setStatus(HttpStatus.NOT_FOUND);
                         response.setBody("No servlet mapped to " + request.getPath());
                     }
 
-                    String httpResponse = response.toHttpMessage(); // Response 를 HttpMsg 로 만든다.
-
-                    // 클라이언트로 응답 전송
-                    DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
-                    outToClient.writeBytes(httpResponse);
+                    DataOutputStream out = new DataOutputStream(connectionSocket.getOutputStream());
+                    out.writeBytes(response.toHttpMessage());
 
                 } catch (IllegalArgumentException e) {
                     logger.error("🔴 잘못된 요청입니다. : {}", e.getMessage());
@@ -63,6 +71,16 @@ public class ServletContainer {
                     logger.error("🔴 뭔가 예기치 못한 에러가 발생했어요.", e);
                 }
             }
+        }
+    }
+
+    private static class RouteBinding {
+        RouteMatcher matcher;
+        Servlet servlet;
+
+        RouteBinding(RouteMatcher matcher, Servlet servlet) {
+            this.matcher = matcher;
+            this.servlet = servlet;
         }
     }
 }

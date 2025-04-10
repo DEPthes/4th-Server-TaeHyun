@@ -2,6 +2,8 @@ package com.hooby.http;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hooby.param.PathParams;
+import com.hooby.param.QueryParams;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -16,6 +18,10 @@ public class CustomHttpRequest {
     private final String httpVersion;
     private final Map<String, String> headers = new HashMap<>();
     private String body;
+
+    private QueryParams queryParams;
+    private PathParams pathParams;
+
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
     public CustomHttpRequest(Socket clientSocket) throws Exception {
@@ -29,7 +35,11 @@ public class CustomHttpRequest {
 
         String[] elems = requestLine.split(" "); // Ex. Get /path HTTP/1.1 -> 공백 기준 분리
         method = elems[0];
-        path = elems[1];
+
+        String[] pathAndQuery = elems[1].split("\\?", 2);
+        path = pathAndQuery[0];
+        queryParams = new QueryParams(pathAndQuery.length > 1 ? pathAndQuery[1] : null);
+
         httpVersion = elems[2];
 
         String headerLine;
@@ -47,6 +57,10 @@ public class CustomHttpRequest {
             reader.read(buf, 0, contentLength); // buffer 에서 0번 offset 기점으로 contentLength 만큼 읽겠다.
             body = new String(buf);
         }
+    }
+
+    public void setPathParams(Map<String, String> params) {
+        this.pathParams = new PathParams(params);
     }
 
     public Map<String, Object> getJsonBody() {
@@ -67,6 +81,9 @@ public class CustomHttpRequest {
     public String getHttpVersion() {return httpVersion;}
     public String getHeader(String key) {return headers.get(key);}
     public String getBody() {return body;}
+
+    public QueryParams getQueryParams() { return queryParams; }
+    public PathParams getPathParams() { return pathParams; }
 }
 
 /* 💡Descriptions
