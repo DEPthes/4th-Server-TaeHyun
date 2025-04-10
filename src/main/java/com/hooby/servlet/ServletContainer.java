@@ -3,32 +3,23 @@ package com.hooby.servlet;
 import com.hooby.http.CustomHttpRequest;
 import com.hooby.http.CustomHttpResponse;
 import com.hooby.http.HttpStatus;
-import com.hooby.routing.RouteMatcher;
+import com.hooby.parser.HttpRequestParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.DataOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class ServletContainer {
     private static final Logger logger = LoggerFactory.getLogger(ServletContainer.class);
 
-    private static final ServletContainer instance = new ServletContainer();
-    private final List<RouteBinding> routes = new ArrayList<>();
-    
-    private ServletContainer() {}
+    private final ServletMapper servletMapper;
+    private final ServletInitializer servletInitializer;
 
-    public static ServletContainer getInstance() {
-        return instance;
-    }
-
-    public void registerServlet(String pattern, Servlet servlet) {
-        routes.add(new RouteBinding(new RouteMatcher(pattern), servlet));
+    public ServletContainer(ServletMapper servletMapper, ServletInitializer servletInitializer) {
+        this.servletMapper = servletMapper;
+        this.servletInitializer = servletInitializer;
     }
 
     public void start(int port) throws Exception {
@@ -40,26 +31,18 @@ public class ServletContainer {
                     logger.info("🟢 Client connected: {}", connectionSocket.getInetAddress());
 
                     // connectionSocket 으로 부터 사용자의 요청을 가져옴 -> HttpMsg 가 옴
-                    CustomHttpRequest request = new CustomHttpRequest(connectionSocket);
+                    CustomHttpRequest request = HttpRequestParser.parse(connectionSocket); // Create Parsed HttpRequestObject
+                    CustomHttpResponse response = new CustomHttpResponse(); // Create HttpResponseObject
 
-                    // response 를 위한 객체를 생성
-                    CustomHttpResponse response = new CustomHttpResponse();
+                    ServletMapper.MappingResult result = servletMapper.map(request.getPath());
 
-                    boolean matched = false;
-
-                    for (RouteBinding binding : routes) {
-                        Map<String, String> pathParams = binding.matcher.match(request.getPath());
-                        if (pathParams != null) {
-                            request.setPathParams(pathParams);
-                            binding.servlet.service(request, response);
-                            matched = true;
-                            break;
-                        }
-                    }
-
-                    if (!matched) {
+                    if (result == null) {
                         response.setStatus(HttpStatus.NOT_FOUND);
-                        response.setBody("No servlet mapped to " + request.getPath());
+                        response.setBody("Not Found");
+                    } else {
+                        request.setPathParams(result.pathParams());
+                        Servlet servlet = servletInitializer.getOrCreate(result.servletName());
+                        servlet.service(request, response);
                     }
 
                     DataOutputStream out = new DataOutputStream(connectionSocket.getOutputStream());
@@ -71,16 +54,6 @@ public class ServletContainer {
                     logger.error("🔴 뭔가 예기치 못한 에러가 발생했어요.", e);
                 }
             }
-        }
-    }
-
-    private static class RouteBinding {
-        RouteMatcher matcher;
-        Servlet servlet;
-
-        RouteBinding(RouteMatcher matcher, Servlet servlet) {
-            this.matcher = matcher;
-            this.servlet = servlet;
         }
     }
 }
