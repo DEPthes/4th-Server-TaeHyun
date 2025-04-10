@@ -18,7 +18,6 @@ public class UserServlet implements Servlet {
     @Override
     public void service(CustomHttpRequest req, CustomHttpResponse res) {
         String id = req.getPathParams().get("id"); // id 에 매칭되는 값을 저장
-        String method = req.getMethod();
         try{
             switch (req.getMethod()) {
                 case "GET" -> {
@@ -51,7 +50,7 @@ public class UserServlet implements Servlet {
         System.out.println("DEBUG: query q = " + q);
 
         var result = userDb.values().stream()
-                .filter(user -> q == null || user.get("name").toString().contains(q))
+                .filter(user -> q == null || user.get("name").toString().equals(q))
                 .filter(user -> ageFilter == null || user.get("age").toString().equals(ageFilter))
                 .toList();
 
