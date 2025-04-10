@@ -23,9 +23,9 @@ public class CustomHttpServer {
             logger.info("🟢 HTTP Server is listening on port {}", port);
 
             while (true) {
-                Socket socket = serverSocket.accept();
-                logger.info("🟢 Client connected: {}", socket.getInetAddress());
-                httpConnector.handle(socket);
+                Socket connectionSocket = serverSocket.accept();
+                logger.info("🟢 Client connected: {}", connectionSocket.getInetAddress());
+                httpConnector.handle(connectionSocket);
             }
         }
     }
