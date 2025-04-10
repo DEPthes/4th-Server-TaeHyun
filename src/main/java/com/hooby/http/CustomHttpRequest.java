@@ -13,9 +13,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CustomHttpRequest {
-    private final String method;
-    private final String path;
-    private final String httpVersion;
+    private String method;
+    private String path;
+    private String httpVersion;
     private final Map<String, String> headers = new HashMap<>();
     private String body;
 
@@ -24,39 +24,33 @@ public class CustomHttpRequest {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
-    public CustomHttpRequest(Socket clientSocket) throws Exception {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-        String requestLine = reader.readLine(); // Ex. Get /path HTTP/1.1 -> Pointer 가 requestLine 다음으로 이동
+    public void setMethod(String method) {
+        this.method = method;
+    }
 
-        // HTTP Message 요청 라인이 비어있으면 예외 처리 해줘야 함
-        if(requestLine == null || requestLine.isEmpty()){
-            throw new IllegalArgumentException("🔴Empty Request Message");
-        }
+    public void setPath(String path) {
+        this.path = path;
+    }
 
-        String[] elems = requestLine.split(" "); // Ex. Get /path HTTP/1.1 -> 공백 기준 분리
-        method = elems[0];
+    public void setHttpVersion(String httpVersion) {
+        this.httpVersion = httpVersion;
+    }
 
-        String[] pathAndQuery = elems[1].split("\\?", 2);
-        path = pathAndQuery[0];
-        queryParams = new QueryParams(pathAndQuery.length > 1 ? pathAndQuery[1] : null);
+    public void setHeader(String key, String value) {
+        headers.put(key, value);
+    }
 
-        httpVersion = elems[2];
+    public void setHeaders(Map<String, String> map) {
+        headers.clear();
+        headers.putAll(map);
+    }
 
-        String headerLine;
-        while(!(headerLine = reader.readLine()).isEmpty()){
-            String[] headerElems = headerLine.split(": ", 2); // Key: Value Pattern
-            if (headerElems.length ==2){
-                headers.put(headerElems[0], headerElems[1]); // Key 와 Value 가 제대로 있다면 header 목록에 업데이트한다.
-            }
-        }
+    public void setBody(String body) {
+        this.body = body;
+    }
 
-        // 요청의 Method가  만약 객체 바디를 필요로 하는 HTTP Method 라면?
-        if("POST".equals(method) || "PUT".equals(method) || "PATCH".equals(method)) {
-            int contentLength = Integer.parseInt(headers.getOrDefault("Content-Length", "0"));
-            char[] buf = new char[contentLength]; // Byte Stream Data 라 Char Array 로 설정한다. (TCP를 알면 당연한 말)
-            reader.read(buf, 0, contentLength); // buffer 에서 0번 offset 기점으로 contentLength 만큼 읽겠다.
-            body = new String(buf);
-        }
+    public void setQueryParams(QueryParams queryParams) {
+        this.queryParams = queryParams;
     }
 
     public void setPathParams(Map<String, String> params) {
