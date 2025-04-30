@@ -16,12 +16,18 @@ public class CustomHttpServer {
     private final HttpConnector httpConnector;
 
     // Create Thread Pool 🧐 p0 : nThreads 는 어느 정도가 적당할까?
-    private final ExecutorService threadPool = Executors.newFixedThreadPool(50);
+    private final ExecutorService threadPool;
 
     // Parameterized Constructor
     public CustomHttpServer(int port, ServletContainer container) {
         this.port = port;
         this.httpConnector = new HttpConnector(container);
+
+        int coreCount = Runtime.getRuntime().availableProcessors();
+        int nThreads = coreCount * 2;
+
+        // I/O Bound 니까 core * 2 ~ Core * 4 수준
+        this.threadPool = Executors.newFixedThreadPool(nThreads);
     }
 
     public void run() throws Exception {
