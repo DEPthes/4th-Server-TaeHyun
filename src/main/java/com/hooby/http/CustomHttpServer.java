@@ -6,8 +6,7 @@ import org.slf4j.LoggerFactory;
 
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.concurrent.ExecutorService; // for Multi-Threading
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 public class CustomHttpServer {
     private static final Logger logger = LoggerFactory.getLogger(CustomHttpServer.class);
@@ -24,10 +23,18 @@ public class CustomHttpServer {
         this.httpConnector = new HttpConnector(container);
 
         int coreCount = Runtime.getRuntime().availableProcessors();
-        int nThreads = coreCount * 2;
+        int nThreads = coreCount * 4;
+        int queueSize = 200;
 
         // I/O Bound 니까 core * 2 ~ Core * 4 수준
-        this.threadPool = Executors.newFixedThreadPool(nThreads);
+        this.threadPool = new ThreadPoolExecutor(
+                nThreads, // core pool size
+                nThreads, // max pool size
+                0L,
+                TimeUnit.MILLISECONDS,
+                new ArrayBlockingQueue<>(queueSize),
+                new ThreadPoolExecutor.CallerRunsPolicy()
+        );
     }
 
     public void run() throws Exception {
