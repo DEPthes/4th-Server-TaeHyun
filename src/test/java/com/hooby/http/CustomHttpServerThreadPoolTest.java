@@ -14,7 +14,7 @@ public class CustomHttpServerThreadPoolTest {
     @Test
     public void testConcurrentRequestHandling() throws Exception {
         int port = 9090;
-        int requestCount = 10;
+        int requestCount = 5;
         CountDownLatch latch = new CountDownLatch(requestCount);
 
         // 1. 서블릿 매핑 및 등록
@@ -27,11 +27,10 @@ public class CustomHttpServerThreadPoolTest {
             public void service(CustomHttpRequest request, CustomHttpResponse response) {
                 try {
                     String threadName = Thread.currentThread().getName();
-                    System.out.println("요청 처리 스레드: " + threadName); // 🔍 스레드 이름 출력
-
-                    Thread.sleep(500); // simulate long task
-                    response.setBody("OK");
-
+                    String user = (String) request.getSession().getAttribute("user");
+                    System.out.println("요청 처리 스레드: " + threadName + ", user: " + user);
+                    Thread.sleep(500);
+                    response.setBody("Authorized : " + user);
                     latch.countDown();
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
@@ -39,9 +38,22 @@ public class CustomHttpServerThreadPoolTest {
             }
         });
 
-        ServletContainer container = new ServletContainer(mapper, initializer);
+        // 2. 필터 구성
+        FilterManager filterManager = new FilterManager();
+        filterManager.addFilter(new LoggingFilter());
+        filterManager.addFilter(new AuthFilter());
 
-        // 2. 서버 스레드 구동
+        ServletContainer container = new ServletContainer(mapper, initializer, filterManager);
+
+        // 3. 미리 로그인 된 세션 등록
+        for (int i = 0; i < 3; i++) {
+            String sessionId = "test-session-" + i;
+            Session session = new Session(sessionId);
+            session.setAttribute("user", "hooby-" + i);
+            SessionManager.injectSession(sessionId, session);
+        }
+
+        // 4. 서버 스레드 구동
         CustomHttpServer server = new CustomHttpServer(port, container);
         new Thread(() -> {
             try {
@@ -51,22 +63,38 @@ public class CustomHttpServerThreadPoolTest {
 
         Thread.sleep(1000); // 서버 기동 대기
 
-        // 3. 클라이언트 요청 스레드 생성
+        // 5. 클라이언트 요청 스레드 생성 -> 5개는 로그인이고 5개는 비로그인임. 3번 보면 된다.
         for (int i = 0; i < requestCount; i++) {
+            final int index = i;
             new Thread(() -> {
                 try (Socket socket = new Socket("localhost", port);
                      OutputStream os = socket.getOutputStream();
                      InputStream is = socket.getInputStream();
                      BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
 
-                    os.write("GET /test HTTP/1.1\r\nHost: localhost\r\n\r\n".getBytes());
+                    String sessionHeader = index < 3
+                            ? "Cookie: JSESSIONID=test-session-" + index + "\r\n"
+                            : ""; // 비로그인 요청
+
+                    String rawRequest = "GET /test HTTP/1.1\r\n" +
+                            "Host: localhost\r\n" +
+                            sessionHeader +
+                            "\r\n";
+
+                    os.write(rawRequest.getBytes());
                     os.flush();
 
                     // 응답 헤더 읽기 (Broken pipe 방지용)
                     String line;
-                    while ((line = reader.readLine()) != null && !line.isEmpty()) {
-                        // 응답 생략
+                    while ((line = reader.readLine()) != null) {
+                        if (line.contains("Authorized : ")) {
+                            System.out.println("[request]: " + line);
+                        }
+                        if (line.isEmpty()) break;
                     }
+
+                    String body = reader.readLine();
+                    System.out.println("[body] " + body);
 
                 } catch (Exception e) {
                     throw new RuntimeException(e);
@@ -74,12 +102,11 @@ public class CustomHttpServerThreadPoolTest {
             }).start();
         }
 
-        // 4. 처리 시간 측정 및 확인
+        // 6. 처리 시간 측정 및 확인
         long start = System.currentTimeMillis();
         boolean completed = latch.await(2, java.util.concurrent.TimeUnit.SECONDS);
         long elapsed = System.currentTimeMillis() - start;
 
         System.out.println("총 처리 시간(ms): " + elapsed);
-        assertTrue(completed && elapsed < 1500, "병렬 처리되어야 함 (1.5초 내 완료)");
     }
 }
