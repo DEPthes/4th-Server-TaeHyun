@@ -23,16 +23,17 @@ public class CustomHttpServer {
         this.httpConnector = new HttpConnector(container);
 
         int coreCount = Runtime.getRuntime().availableProcessors();
-        int nThreads = coreCount * 4;
-        int queueSize = 200;
+        int nThreads = coreCount * 2;
+        int queueSize = 200; // Q = TPS × RT × SafetyMargin
 
         // I/O Bound 니까 core * 2 ~ Core * 4 수준
         this.threadPool = new ThreadPoolExecutor(
                 nThreads, // core pool size
-                nThreads, // max pool size
-                0L,
+                nThreads*2, // max pool size
+                30L, // keepAliveTime
                 TimeUnit.MILLISECONDS,
-                new ArrayBlockingQueue<>(queueSize),
+                new LinkedBlockingQueue<>(queueSize),
+                Executors.defaultThreadFactory(),
                 new ThreadPoolExecutor.CallerRunsPolicy()
         );
     }
