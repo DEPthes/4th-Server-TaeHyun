@@ -1,8 +1,6 @@
 package com.hooby;
 
-import com.hooby.http.CustomHttpRequest;
-import com.hooby.http.CustomHttpResponse;
-import com.hooby.http.CustomHttpServer;
+import com.hooby.http.*;
 import com.hooby.servlet.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,23 +14,35 @@ public class Main {
             mapper.registerServlet("/users", "UserServlet");
             mapper.registerServlet("/users/{id}", "UserServlet");
             mapper.registerServlet("/test", "TestServlet");
+            mapper.registerServlet("/login", "UserServlet");
 
             ServletInitializer initializer = new ServletInitializer();
-            initializer.registerFactory("UserServlet", UserServlet::new);
+
+            UserServlet sharedUserServlet = new UserServlet();
+            initializer.registerFactory("UserServlet", () -> sharedUserServlet);
+
             initializer.registerFactory("TestServlet", () -> new Servlet() {
                 @Override
                 public void service(CustomHttpRequest request, CustomHttpResponse response) {
                     try {
+                        String sessionUser = (String) request.getSession().getAttribute("user");
                         Thread.sleep(500);
-                        response.setBody("OK");
+                        response.setBody("Hello " + (sessionUser != null ? sessionUser : "guest"));
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
                 }
             });
 
-            ServletContainer container = new ServletContainer(mapper, initializer);
+            // 3. 필터 설정 (순서 중요)
+            FilterManager filterManager = new FilterManager();
+            filterManager.addFilter(new SessionFilter());   // 반드시 제일 먼저
+            filterManager.addFilter(new LoggingFilter());
+            filterManager.addFilter(new AuthFilter());
+
+            ServletContainer container = new ServletContainer(mapper, initializer, filterManager);
             CustomHttpServer server = new CustomHttpServer(8080, container);
+
             server.run();
 
         } catch (Exception e) {
