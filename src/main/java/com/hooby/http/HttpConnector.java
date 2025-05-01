@@ -24,6 +24,7 @@ public class HttpConnector {
             // connectionSocket 으로 부터 사용자의 요청을 가져옴 -> HttpMsg 가 옴
             CustomHttpRequest request = HttpRequestParser.parse(connectionSocket); // Create Parsed HttpRequestObject
             CustomHttpResponse response = servletContainer.dispatch(request); // Create HttpResponseObject
+            request.setSession(SessionManager.getOrCreateSession(request, response));
 
             out.writeBytes(response.toHttpMessage()); // try-with 라 자동으로 닫혀줄거임
         } catch (IllegalArgumentException e) {
