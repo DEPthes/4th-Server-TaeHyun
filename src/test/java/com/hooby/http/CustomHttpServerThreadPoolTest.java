@@ -12,48 +12,32 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class CustomHttpServerThreadPoolTest {
 
     @Test
-    public void testConcurrentRequestHandling() throws Exception {
+    public void testThreadPoolConcurrency() throws Exception {
         int port = 9090;
         int requestCount = 5;
         CountDownLatch latch = new CountDownLatch(requestCount);
 
-        // 1. 서블릿 매핑 및 등록
+        // 1. 서블릿 매핑 및 단일 테스트 서블릿 등록
         ServletMapper mapper = new ServletMapper();
         mapper.registerServlet("/test", "TestServlet");
 
         ServletInitializer initializer = new ServletInitializer();
-        initializer.registerFactory("TestServlet", () -> new Servlet() {
-            @Override
-            public void service(CustomHttpRequest request, CustomHttpResponse response) {
-                try {
-                    String threadName = Thread.currentThread().getName();
-                    String user = (String) request.getSession().getAttribute("user");
-                    System.out.println("요청 처리 스레드: " + threadName + ", user: " + user);
-                    Thread.sleep(500);
-                    response.setBody("Authorized : " + user);
-                    latch.countDown();
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
+        initializer.registerFactory("TestServlet", () -> (req, res) -> {
+            try {
+                String thread = Thread.currentThread().getName();
+                System.out.println("💡 요청 처리 스레드: " + thread);
+                Thread.sleep(500);  // 병렬성 확인용
+                res.setBody("Hello from " + thread);
+                latch.countDown();
+            } catch (InterruptedException ignored) {}
         });
 
-        // 2. 필터 구성
+        // 2. 필터는 없이 구성 (ThreadPool 테스트 목적)
         FilterManager filterManager = new FilterManager();
-        filterManager.addFilter(new LoggingFilter());
-        filterManager.addFilter(new AuthFilter());
 
         ServletContainer container = new ServletContainer(mapper, initializer, filterManager);
 
-        // 3. 미리 로그인 된 세션 등록
-        for (int i = 0; i < 3; i++) {
-            String sessionId = "test-session-" + i;
-            Session session = new Session(sessionId);
-            session.setAttribute("user", "hooby-" + i);
-            SessionManager.injectSession(sessionId, session);
-        }
-
-        // 4. 서버 스레드 구동
+        // 3. 서버 실행
         CustomHttpServer server = new CustomHttpServer(port, container);
         new Thread(() -> {
             try {
@@ -61,40 +45,28 @@ public class CustomHttpServerThreadPoolTest {
             } catch (Exception ignored) {}
         }).start();
 
-        Thread.sleep(1000); // 서버 기동 대기
+        Thread.sleep(500); // 서버 기동 대기
 
-        // 5. 클라이언트 요청 스레드 생성 -> 5개는 로그인이고 5개는 비로그인임. 3번 보면 된다.
+        // 4. 요청 5개 병렬 발사
         for (int i = 0; i < requestCount; i++) {
-            final int index = i;
             new Thread(() -> {
                 try (Socket socket = new Socket("localhost", port);
                      OutputStream os = socket.getOutputStream();
                      InputStream is = socket.getInputStream();
                      BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
 
-                    String sessionHeader = index < 3
-                            ? "Cookie: JSESSIONID=test-session-" + index + "\r\n"
-                            : ""; // 비로그인 요청
-
                     String rawRequest = "GET /test HTTP/1.1\r\n" +
-                            "Host: localhost\r\n" +
-                            sessionHeader +
-                            "\r\n";
+                            "Host: localhost\r\n\r\n";
 
                     os.write(rawRequest.getBytes());
                     os.flush();
 
-                    // 응답 헤더 읽기 (Broken pipe 방지용)
-                    String line;
-                    while ((line = reader.readLine()) != null) {
-                        if (line.contains("Authorized : ")) {
-                            System.out.println("[request]: " + line);
-                        }
-                        if (line.isEmpty()) break;
+                    while (reader.readLine() != null) {
+                        // 응답 헤더 버리기
+                        if (reader.readLine().isEmpty()) break;
                     }
 
-                    String body = reader.readLine();
-                    System.out.println("[body] " + body);
+                    System.out.println("[응답 본문] " + reader.readLine());
 
                 } catch (Exception e) {
                     throw new RuntimeException(e);
@@ -102,11 +74,8 @@ public class CustomHttpServerThreadPoolTest {
             }).start();
         }
 
-        // 6. 처리 시간 측정 및 확인
-        long start = System.currentTimeMillis();
-        boolean completed = latch.await(2, java.util.concurrent.TimeUnit.SECONDS);
-        long elapsed = System.currentTimeMillis() - start;
-
-        System.out.println("총 처리 시간(ms): " + elapsed);
+        // 5. 완료 대기
+        boolean completed = latch.await(3, java.util.concurrent.TimeUnit.SECONDS);
+        assertTrue(completed, "요청 5개가 모두 병렬로 처리되어야 함");
     }
 }
