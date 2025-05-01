@@ -27,9 +27,7 @@ public class ServletContainer {
     public CustomHttpResponse dispatch(CustomHttpRequest request) {
         CustomHttpResponse response = new CustomHttpResponse();
 
-        // 기존 세션이 있으면 재사용하고 없으면 새 세션 생성.
-        SessionManager.getOrCreateSession(request, response); // JSESSIONID 존재 여부 판단
-
+//        SessionManager.getOrCreateSession(request, response);
         ServletMapper.MappingResult result = servletMapper.map(request.getPath());
 
         if (result == null) {
