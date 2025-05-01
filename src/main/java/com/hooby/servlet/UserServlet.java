@@ -1,10 +1,7 @@
 package com.hooby.servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hooby.http.CustomHttpRequest;
-import com.hooby.http.CustomHttpResponse;
-import com.hooby.http.HttpStatus;
-import com.hooby.http.Session;
+import com.hooby.http.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -67,7 +64,6 @@ public class UserServlet implements Servlet {
         res.setBody("Login successful");
     }
 
-    // 여기에 GetMapping 어노테이션 이런거 달고 싶다..
     private void getAllUsers(CustomHttpRequest req, CustomHttpResponse res) throws Exception {
         String q = req.getQueryParams().get("q");
         String ageFilter = req.getQueryParams().get("age");
