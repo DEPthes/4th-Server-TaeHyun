@@ -25,6 +25,14 @@ public class CustomHttpResponse {
         headers.putIfAbsent("Content-Type", "text/plain; charset=UTF-8");
     }
 
+    public String getBody() {
+        return this.body;
+    }
+
+    public int getStatus() {
+        return statusCode;
+    }
+
     public String toHttpMessage(){
         StringBuilder message = new StringBuilder();
         message.append("HTTP/1.1 ")
