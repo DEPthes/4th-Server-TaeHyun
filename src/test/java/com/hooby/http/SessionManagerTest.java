@@ -37,11 +37,9 @@ public class SessionManagerTest {
 
     @Test
     public void testSessionIsReusedIfCookiePresent() {
-        // 1. 세션을 먼저 생성
         Session firstSession = SessionManager.getOrCreateSession(request, response);
         String sessionId = firstSession.getId();
 
-        // 2. 다음 요청에 해당 세션 ID를 쿠키로 삽입
         CustomHttpRequest secondRequest = new CustomHttpRequest();
         secondRequest.setHeader("Cookie", "JSESSIONID=" + sessionId);
 
@@ -64,5 +62,24 @@ public class SessionManagerTest {
         assertEquals("hooby", value, "세션에 저장한 값을 다시 정확히 읽을 수 있어야 함");
 
         System.out.println("세션 속성 확인: user=" + value);
+    }
+
+    @Test
+    public void testSessionExpiresAfterInactivity() throws InterruptedException {
+        Session session = SessionManager.getOrCreateSession(request, response);
+        String sessionId = session.getId();
+
+        session.setMaxInactiveInterval(1); // 1초 후 만료
+        Thread.sleep(1500); // 만료될 시간 이후로 대기
+
+        CustomHttpRequest nextReq = new CustomHttpRequest();
+        nextReq.setHeader("Cookie", "JSESSIONID=" + sessionId);
+        CustomHttpResponse dummyResp = new CustomHttpResponse();
+
+        Session newSession = SessionManager.getOrCreateSession(nextReq, dummyResp);
+
+        assertNotEquals(sessionId, newSession.getId(), "만료된 세션과는 다른 새 세션이어야 함");
+
+        System.out.println("만료된 세션 제거됨. 새로운 세션 생성됨: " + newSession.getId());
     }
 }
