@@ -2,6 +2,7 @@ package com.hooby.http;
 
 import com.hooby.listener.ListenerManager;
 
+import java.util.Iterator;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -22,13 +23,20 @@ public class SessionManager {
             return request.getSession();
         }
 
+        cleanUpExpiredSessions();
+
         String cookieHeader = request.getHeader("Cookie");
         String extractedId = extractSessionIdFromCookie(cookieHeader);
 
         if (extractedId != null && sessionStore.containsKey(extractedId)) {
             Session session = sessionStore.get(extractedId);
-            request.setSession(session);
-            return session;
+            if (!session.isExpired()) {
+                session.updateLastAccessedTime();
+                request.setSession(session);
+                return session;
+            } else {
+                invalidateSession(extractedId);
+            }
         }
 
         // 새 세션 생성
@@ -64,6 +72,19 @@ public class SessionManager {
         Session session = sessionStore.remove(sessionId);
         if (session != null && listenerManager != null) {
             listenerManager.notifySessionDestroyed(session);
+        }
+    }
+
+    private static void cleanUpExpiredSessions() {
+        Iterator<Map.Entry<String, Session>> it = sessionStore.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry<String, Session> entry = it.next();
+            if (entry.getValue().isExpired()) {
+                it.remove();
+                if (listenerManager != null) {
+                    listenerManager.notifySessionDestroyed(entry.getValue());
+                }
+            }
         }
     }
 
