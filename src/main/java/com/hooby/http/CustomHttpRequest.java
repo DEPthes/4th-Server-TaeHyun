@@ -78,6 +78,16 @@ public class CustomHttpRequest {
 
     public QueryParams getQueryParams() { return queryParams; }
     public PathParams getPathParams() { return pathParams; }
+
+    private Session session;
+
+    public void setSession(Session session) {
+        this.session = session;
+    }
+
+    public Session getSession() {
+        return session;
+    }
 }
 
 /* 💡Descriptions
