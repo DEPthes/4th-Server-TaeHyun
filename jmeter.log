@@ -1,28 +1,28 @@
-2025-05-01 08:10:30,672 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
-2025-05-01 08:10:30,690 INFO o.a.j.JMeter: Loading user properties from: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/user.properties
-2025-05-01 08:10:30,691 INFO o.a.j.JMeter: Loading system properties from: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/system.properties
-2025-05-01 08:10:30,695 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
-2025-05-01 08:10:30,695 INFO o.a.j.JMeter: Version 5.6.3
-2025-05-01 08:10:30,695 INFO o.a.j.JMeter: java.version=21.0.7
-2025-05-01 08:10:30,695 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
-2025-05-01 08:10:30,695 INFO o.a.j.JMeter: os.name=Mac OS X
-2025-05-01 08:10:30,695 INFO o.a.j.JMeter: os.arch=aarch64
-2025-05-01 08:10:30,695 INFO o.a.j.JMeter: os.version=15.3.2
-2025-05-01 08:10:30,695 INFO o.a.j.JMeter: file.encoding=UTF-8
-2025-05-01 08:10:30,695 INFO o.a.j.JMeter: java.awt.headless=null
-2025-05-01 08:10:30,695 INFO o.a.j.JMeter: Max memory     =1073741824
-2025-05-01 08:10:30,696 INFO o.a.j.JMeter: Available Processors =8
-2025-05-01 08:10:30,703 INFO o.a.j.JMeter: Default Locale=English (EN)
-2025-05-01 08:10:30,703 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
-2025-05-01 08:10:30,704 INFO o.a.j.JMeter: JMeterHome=/opt/homebrew/Cellar/jmeter/5.6.3/libexec
-2025-05-01 08:10:30,704 INFO o.a.j.JMeter: user.dir  =/Users/hooby/Project/DEPth/4th_Study/CustomHttpServer
-2025-05-01 08:10:30,704 INFO o.a.j.JMeter: PWD       =/Users/hooby/Project/DEPth/4th_Study/CustomHttpServer
-2025-05-01 08:10:30,705 INFO o.a.j.JMeter: IP: 127.0.0.1 Name: gimtaehyeon-ui-noteubug.local FullName: localhost
-2025-05-01 08:10:30,715 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
-2025-05-01 08:10:31,132 INFO o.a.j.JMeterGuiLauncher: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.DarculaTheme
-2025-05-01 08:10:32,642 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.action.Command], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
-2025-05-01 08:10:32,689 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.10.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.action.Command], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
-2025-05-01 08:10:32,691 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+2025-05-01 22:12:38,188 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2025-05-01 22:12:38,206 INFO o.a.j.JMeter: Loading user properties from: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/user.properties
+2025-05-01 22:12:38,206 INFO o.a.j.JMeter: Loading system properties from: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/system.properties
+2025-05-01 22:12:38,210 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2025-05-01 22:12:38,210 INFO o.a.j.JMeter: Version 5.6.3
+2025-05-01 22:12:38,210 INFO o.a.j.JMeter: java.version=21.0.7
+2025-05-01 22:12:38,210 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2025-05-01 22:12:38,210 INFO o.a.j.JMeter: os.name=Mac OS X
+2025-05-01 22:12:38,210 INFO o.a.j.JMeter: os.arch=aarch64
+2025-05-01 22:12:38,210 INFO o.a.j.JMeter: os.version=15.3.2
+2025-05-01 22:12:38,211 INFO o.a.j.JMeter: file.encoding=UTF-8
+2025-05-01 22:12:38,211 INFO o.a.j.JMeter: java.awt.headless=null
+2025-05-01 22:12:38,211 INFO o.a.j.JMeter: Max memory     =1073741824
+2025-05-01 22:12:38,211 INFO o.a.j.JMeter: Available Processors =8
+2025-05-01 22:12:38,219 INFO o.a.j.JMeter: Default Locale=English (EN)
+2025-05-01 22:12:38,219 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2025-05-01 22:12:38,219 INFO o.a.j.JMeter: JMeterHome=/opt/homebrew/Cellar/jmeter/5.6.3/libexec
+2025-05-01 22:12:38,219 INFO o.a.j.JMeter: user.dir  =/Users/hooby/Project/DEPth/4th_Study/CustomHttpServer
+2025-05-01 22:12:38,219 INFO o.a.j.JMeter: PWD       =/Users/hooby/Project/DEPth/4th_Study/CustomHttpServer
+2025-05-01 22:12:38,221 INFO o.a.j.JMeter: IP: 127.0.0.1 Name: gimtaehyeon-ui-noteubug.local FullName: localhost
+2025-05-01 22:12:38,230 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2025-05-01 22:12:38,634 INFO o.a.j.JMeterGuiLauncher: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.DarculaTheme
+2025-05-01 22:12:40,165 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.action.Command], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-05-01 22:12:40,212 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.10.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.action.Command], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-05-01 22:12:40,214 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
 java.util.zip.ZipException: zip END header not found
 	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
 	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
@@ -49,7 +49,7 @@ java.util.zip.ZipException: zip END header not found
 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:793) [kotlinx-coroutines-core-jvm-1.7.3.jar:?]
 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:697) [kotlinx-coroutines-core-jvm-1.7.3.jar:?]
 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:684) [kotlinx-coroutines-core-jvm-1.7.3.jar:?]
-2025-05-01 08:10:32,695 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+2025-05-01 22:12:40,219 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
 java.util.zip.ZipException: zip END header not found
 	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
 	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
@@ -74,9 +74,9 @@ java.util.zip.ZipException: zip END header not found
 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:793) [kotlinx-coroutines-core-jvm-1.7.3.jar:?]
 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:697) [kotlinx-coroutines-core-jvm-1.7.3.jar:?]
 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:684) [kotlinx-coroutines-core-jvm-1.7.3.jar:?]
-2025-05-01 08:10:32,733 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.plugin.MenuCreator], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
-2025-05-01 08:10:32,735 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.10.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.plugin.MenuCreator], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
-2025-05-01 08:10:32,736 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+2025-05-01 22:12:40,257 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.plugin.MenuCreator], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-05-01 22:12:40,259 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.10.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.plugin.MenuCreator], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-05-01 22:12:40,261 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
 java.util.zip.ZipException: zip END header not found
 	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
 	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
@@ -137,7 +137,7 @@ java.util.zip.ZipException: zip END header not found
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
-2025-05-01 08:10:32,737 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+2025-05-01 22:12:40,262 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
 java.util.zip.ZipException: zip END header not found
 	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
 	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
@@ -196,10 +196,9 @@ java.util.zip.ZipException: zip END header not found
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
-2025-05-01 08:10:32,771 WARN o.j.r.PluginManager: Found JAR conflict: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar and /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.10.jar
-2025-05-01 08:10:32,835 INFO o.j.r.JARSourceHTTP: Found cached repo
-2025-05-01 08:10:32,972 INFO o.j.r.PluginManager: Plugins Status: [jpgc-plugins-manager=1.10, jmeter-core=5.6.3, jmeter-ftp=5.6.3, jmeter-http=5.6.3, jmeter-jdbc=5.6.3, jmeter-jms=5.6.3, jmeter-junit=5.6.3, jmeter-java=5.6.3, jmeter-ldap=5.6.3, jmeter-mail=5.6.3, jmeter-mongodb=5.6.3, jmeter-native=5.6.3, jmeter-tcp=5.6.3, jmeter-components=5.6.3]
-2025-05-01 08:10:34,247 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+2025-05-01 22:12:40,296 WARN o.j.r.PluginManager: Found JAR conflict: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar and /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.10.jar
+2025-05-01 22:12:40,337 INFO o.j.r.JARSourceHTTP: Requesting https://jmeter-plugins.org/repo/?installID=mac_os_x-4be4b82e558e9780525b35b0e1c90f62-gui
+2025-05-01 22:12:41,764 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
 java.util.zip.ZipException: zip END header not found
 	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
 	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
@@ -256,28 +255,689 @@ java.util.zip.ZipException: zip END header not found
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
-2025-05-01 08:10:40,665 INFO o.a.j.s.FileServer: Default base='/Users/hooby/Project/DEPth/4th_Study/CustomHttpServer'
-2025-05-01 08:10:40,667 INFO o.a.j.g.a.Load: Loading file: /Users/hooby/Project/DEPth/4th_Study/CustomHttpServer/test.jmx
-2025-05-01 08:10:40,667 INFO o.a.j.s.FileServer: Set new base='/Users/hooby/Project/DEPth/4th_Study/CustomHttpServer'
-2025-05-01 08:10:40,781 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
-2025-05-01 08:10:40,786 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
-2025-05-01 08:10:40,787 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
-2025-05-01 08:10:40,788 INFO o.a.j.s.SaveService: Loading file: /Users/hooby/Project/DEPth/4th_Study/CustomHttpServer/test.jmx
-2025-05-01 08:10:40,839 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2025-05-01 08:10:40,839 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2025-05-01 08:10:40,840 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2025-05-01 08:10:40,840 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2025-05-01 08:10:40,840 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
-2025-05-01 08:10:40,840 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
-2025-05-01 08:10:40,972 INFO o.a.j.s.FileServer: Set new base='/Users/hooby/Project/DEPth/4th_Study/CustomHttpServer'
-2025-05-01 08:10:56,951 INFO o.a.j.e.StandardJMeterEngine: Running the test!
-2025-05-01 08:10:56,952 INFO o.a.j.s.SampleEvent: List of sample_variables: []
-2025-05-01 08:10:56,952 INFO o.a.j.s.SampleEvent: List of sample_variables: []
-2025-05-01 08:10:56,952 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
-2025-05-01 08:10:56,952 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
-2025-05-01 08:10:57,004 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.functions.Function], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
-2025-05-01 08:10:57,006 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.10.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.functions.Function], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
-2025-05-01 08:10:57,009 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+2025-05-01 22:12:42,374 INFO o.j.r.PluginManager: Plugins Status: [jpgc-plugins-manager=1.10, jmeter-core=5.6.3, jmeter-ftp=5.6.3, jmeter-http=5.6.3, jmeter-jdbc=5.6.3, jmeter-jms=5.6.3, jmeter-junit=5.6.3, jmeter-java=5.6.3, jmeter-ldap=5.6.3, jmeter-mail=5.6.3, jmeter-mongodb=5.6.3, jmeter-native=5.6.3, jmeter-tcp=5.6.3, jmeter-components=5.6.3]
+2025-05-01 22:12:51,352 INFO o.a.j.s.FileServer: Default base='/Users/hooby/Project/DEPth/4th_Study/CustomHttpServer'
+2025-05-01 22:12:51,353 INFO o.a.j.g.a.Load: Loading file: /Users/hooby/Project/DEPth/4th_Study/CustomHttpServer/createUser.jmx
+2025-05-01 22:12:51,354 INFO o.a.j.s.FileServer: Set new base='/Users/hooby/Project/DEPth/4th_Study/CustomHttpServer'
+2025-05-01 22:12:51,471 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2025-05-01 22:12:51,476 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2025-05-01 22:12:51,477 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2025-05-01 22:12:51,478 INFO o.a.j.s.SaveService: Loading file: /Users/hooby/Project/DEPth/4th_Study/CustomHttpServer/createUser.jmx
+2025-05-01 22:12:51,534 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2025-05-01 22:12:51,534 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2025-05-01 22:12:51,534 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2025-05-01 22:12:51,534 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2025-05-01 22:12:51,534 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2025-05-01 22:12:51,534 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2025-05-01 22:12:51,666 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2025-05-01 22:12:51,666 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2025-05-01 22:12:51,666 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2025-05-01 22:12:51,666 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2025-05-01 22:12:51,756 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.visualizers.ResultRenderer], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-05-01 22:12:51,758 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.10.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.visualizers.ResultRenderer], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-05-01 22:12:51,761 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+java.util.zip.ZipException: zip END header not found
+	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1495) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1458) ~[?:?]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:724) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:251) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:180) ~[?:?]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:345) ~[?:?]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:316) ~[?:?]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:282) ~[?:?]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesInOnePath(ClassFinder.java:478) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClasses(ClassFinder.java:443) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:413) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:336) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:315) ~[jorphan.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.findClassesThatExtend(JMeterUtils.java:402) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.loadServicesAndScanJars(JMeterUtils.java:349) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.createComboRender(ViewResultsFullVisualizer.java:464) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.createLeftPanel(ViewResultsFullVisualizer.java:438) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.init(ViewResultsFullVisualizer.java:349) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.<init>(ViewResultsFullVisualizer.java:156) ~[ApacheJMeter_components.jar:5.6.3]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.apache.jmeter.gui.GuiPackage.getGuiFromCache(GuiPackage.java:424) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:267) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:238) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addComponent(JMeterTreeModel.java:160) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:123) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.addSubTree(GuiPackage.java:555) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.insertLoadedTree(Load.java:201) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:132) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:103) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.doActionAfterCheck(Load.java:90) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.AbstractActionWithNoRunningTest.doAction(AbstractActionWithNoRunningTest.java:44) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:83) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-05-01 22:12:51,762 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+java.util.zip.ZipException: zip END header not found
+	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1495) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1458) ~[?:?]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:724) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:251) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:180) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:194) ~[?:?]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesInOnePath(ClassFinder.java:496) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClasses(ClassFinder.java:443) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:413) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:336) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:315) ~[jorphan.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.findClassesThatExtend(JMeterUtils.java:402) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.loadServicesAndScanJars(JMeterUtils.java:349) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.createComboRender(ViewResultsFullVisualizer.java:464) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.createLeftPanel(ViewResultsFullVisualizer.java:438) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.init(ViewResultsFullVisualizer.java:349) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.<init>(ViewResultsFullVisualizer.java:156) ~[ApacheJMeter_components.jar:5.6.3]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.apache.jmeter.gui.GuiPackage.getGuiFromCache(GuiPackage.java:424) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:267) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:238) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addComponent(JMeterTreeModel.java:160) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:123) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.addSubTree(GuiPackage.java:555) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.insertLoadedTree(Load.java:201) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:132) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:103) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.doActionAfterCheck(Load.java:90) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.AbstractActionWithNoRunningTest.doAction(AbstractActionWithNoRunningTest.java:44) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:83) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-05-01 22:12:51,777 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.visualizers.RequestView], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-05-01 22:12:51,779 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.10.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.visualizers.RequestView], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-05-01 22:12:51,781 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+java.util.zip.ZipException: zip END header not found
+	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1495) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1458) ~[?:?]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:724) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:251) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:180) ~[?:?]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:345) ~[?:?]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:316) ~[?:?]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:282) ~[?:?]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesInOnePath(ClassFinder.java:478) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClasses(ClassFinder.java:443) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:413) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:336) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:315) ~[jorphan.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.findClassesThatExtend(JMeterUtils.java:402) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.loadServicesAndScanJars(JMeterUtils.java:349) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.visualizers.RequestPanel.<init>(RequestPanel.java:56) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.SamplerResultTab.init(SamplerResultTab.java:241) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.init(ViewResultsFullVisualizer.java:367) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.<init>(ViewResultsFullVisualizer.java:156) ~[ApacheJMeter_components.jar:5.6.3]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.apache.jmeter.gui.GuiPackage.getGuiFromCache(GuiPackage.java:424) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:267) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:238) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addComponent(JMeterTreeModel.java:160) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:123) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.addSubTree(GuiPackage.java:555) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.insertLoadedTree(Load.java:201) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:132) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:103) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.doActionAfterCheck(Load.java:90) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.AbstractActionWithNoRunningTest.doAction(AbstractActionWithNoRunningTest.java:44) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:83) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-05-01 22:12:51,782 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+java.util.zip.ZipException: zip END header not found
+	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1495) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1458) ~[?:?]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:724) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:251) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:180) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:194) ~[?:?]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesInOnePath(ClassFinder.java:496) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClasses(ClassFinder.java:443) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:413) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:336) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:315) ~[jorphan.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.findClassesThatExtend(JMeterUtils.java:402) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.loadServicesAndScanJars(JMeterUtils.java:349) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.visualizers.RequestPanel.<init>(RequestPanel.java:56) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.SamplerResultTab.init(SamplerResultTab.java:241) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.init(ViewResultsFullVisualizer.java:367) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.<init>(ViewResultsFullVisualizer.java:156) ~[ApacheJMeter_components.jar:5.6.3]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.apache.jmeter.gui.GuiPackage.getGuiFromCache(GuiPackage.java:424) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:267) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:238) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addComponent(JMeterTreeModel.java:160) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:123) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.addSubTree(GuiPackage.java:555) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.insertLoadedTree(Load.java:201) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:132) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:103) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.doActionAfterCheck(Load.java:90) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.AbstractActionWithNoRunningTest.doAction(AbstractActionWithNoRunningTest.java:44) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:83) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-05-01 22:12:51,823 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.visualizers.ResultRenderer], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-05-01 22:12:51,826 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.10.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.visualizers.ResultRenderer], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-05-01 22:12:51,828 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+java.util.zip.ZipException: zip END header not found
+	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1495) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1458) ~[?:?]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:724) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:251) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:180) ~[?:?]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:345) ~[?:?]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:316) ~[?:?]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:282) ~[?:?]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesInOnePath(ClassFinder.java:478) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClasses(ClassFinder.java:443) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:413) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:336) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:315) ~[jorphan.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.findClassesThatExtend(JMeterUtils.java:402) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.loadServicesAndScanJars(JMeterUtils.java:349) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.createComboRender(ViewResultsFullVisualizer.java:464) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.createLeftPanel(ViewResultsFullVisualizer.java:438) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.init(ViewResultsFullVisualizer.java:349) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.<init>(ViewResultsFullVisualizer.java:156) ~[ApacheJMeter_components.jar:5.6.3]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.apache.jmeter.gui.GuiPackage.getGuiFromCache(GuiPackage.java:424) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:267) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:238) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addComponent(JMeterTreeModel.java:160) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:123) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.addSubTree(GuiPackage.java:555) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.insertLoadedTree(Load.java:201) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:132) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:103) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.doActionAfterCheck(Load.java:90) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.AbstractActionWithNoRunningTest.doAction(AbstractActionWithNoRunningTest.java:44) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:83) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-05-01 22:12:51,829 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+java.util.zip.ZipException: zip END header not found
+	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1495) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1458) ~[?:?]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:724) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:251) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:180) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:194) ~[?:?]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesInOnePath(ClassFinder.java:496) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClasses(ClassFinder.java:443) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:413) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:336) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:315) ~[jorphan.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.findClassesThatExtend(JMeterUtils.java:402) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.loadServicesAndScanJars(JMeterUtils.java:349) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.createComboRender(ViewResultsFullVisualizer.java:464) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.createLeftPanel(ViewResultsFullVisualizer.java:438) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.init(ViewResultsFullVisualizer.java:349) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.<init>(ViewResultsFullVisualizer.java:156) ~[ApacheJMeter_components.jar:5.6.3]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.apache.jmeter.gui.GuiPackage.getGuiFromCache(GuiPackage.java:424) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:267) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:238) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addComponent(JMeterTreeModel.java:160) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:123) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.addSubTree(GuiPackage.java:555) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.insertLoadedTree(Load.java:201) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:132) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:103) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.doActionAfterCheck(Load.java:90) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.AbstractActionWithNoRunningTest.doAction(AbstractActionWithNoRunningTest.java:44) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:83) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-05-01 22:12:51,839 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.visualizers.RequestView], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-05-01 22:12:51,841 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.10.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.visualizers.RequestView], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-05-01 22:12:51,843 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+java.util.zip.ZipException: zip END header not found
+	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1495) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1458) ~[?:?]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:724) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:251) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:180) ~[?:?]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:345) ~[?:?]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:316) ~[?:?]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:282) ~[?:?]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesInOnePath(ClassFinder.java:478) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClasses(ClassFinder.java:443) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:413) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:336) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:315) ~[jorphan.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.findClassesThatExtend(JMeterUtils.java:402) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.loadServicesAndScanJars(JMeterUtils.java:349) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.visualizers.RequestPanel.<init>(RequestPanel.java:56) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.SamplerResultTab.init(SamplerResultTab.java:241) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.init(ViewResultsFullVisualizer.java:367) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.<init>(ViewResultsFullVisualizer.java:156) ~[ApacheJMeter_components.jar:5.6.3]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.apache.jmeter.gui.GuiPackage.getGuiFromCache(GuiPackage.java:424) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:267) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:238) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addComponent(JMeterTreeModel.java:160) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:123) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.addSubTree(GuiPackage.java:555) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.insertLoadedTree(Load.java:201) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:132) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:103) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.doActionAfterCheck(Load.java:90) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.AbstractActionWithNoRunningTest.doAction(AbstractActionWithNoRunningTest.java:44) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:83) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-05-01 22:12:51,844 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+java.util.zip.ZipException: zip END header not found
+	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1495) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1458) ~[?:?]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:724) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:251) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:180) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:194) ~[?:?]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesInOnePath(ClassFinder.java:496) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClasses(ClassFinder.java:443) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:413) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:336) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:315) ~[jorphan.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.findClassesThatExtend(JMeterUtils.java:402) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.loadServicesAndScanJars(JMeterUtils.java:349) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.visualizers.RequestPanel.<init>(RequestPanel.java:56) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.SamplerResultTab.init(SamplerResultTab.java:241) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.init(ViewResultsFullVisualizer.java:367) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.<init>(ViewResultsFullVisualizer.java:156) ~[ApacheJMeter_components.jar:5.6.3]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.apache.jmeter.gui.GuiPackage.getGuiFromCache(GuiPackage.java:424) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:267) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:238) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addComponent(JMeterTreeModel.java:160) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:123) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.addSubTree(GuiPackage.java:555) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.insertLoadedTree(Load.java:201) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:132) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:103) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.doActionAfterCheck(Load.java:90) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.AbstractActionWithNoRunningTest.doAction(AbstractActionWithNoRunningTest.java:44) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:83) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-05-01 22:12:51,887 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.visualizers.ResultRenderer], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-05-01 22:12:51,889 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.10.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.visualizers.ResultRenderer], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-05-01 22:12:51,890 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+java.util.zip.ZipException: zip END header not found
+	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1495) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1458) ~[?:?]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:724) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:251) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:180) ~[?:?]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:345) ~[?:?]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:316) ~[?:?]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:282) ~[?:?]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesInOnePath(ClassFinder.java:478) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClasses(ClassFinder.java:443) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:413) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:336) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:315) ~[jorphan.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.findClassesThatExtend(JMeterUtils.java:402) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.loadServicesAndScanJars(JMeterUtils.java:349) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.createComboRender(ViewResultsFullVisualizer.java:464) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.createLeftPanel(ViewResultsFullVisualizer.java:438) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.init(ViewResultsFullVisualizer.java:349) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.<init>(ViewResultsFullVisualizer.java:156) ~[ApacheJMeter_components.jar:5.6.3]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.apache.jmeter.gui.GuiPackage.getGuiFromCache(GuiPackage.java:424) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:267) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:238) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addComponent(JMeterTreeModel.java:160) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:123) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.addSubTree(GuiPackage.java:555) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.insertLoadedTree(Load.java:201) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:132) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:103) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.doActionAfterCheck(Load.java:90) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.AbstractActionWithNoRunningTest.doAction(AbstractActionWithNoRunningTest.java:44) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:83) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-05-01 22:12:51,891 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+java.util.zip.ZipException: zip END header not found
+	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1495) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1458) ~[?:?]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:724) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:251) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:180) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:194) ~[?:?]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesInOnePath(ClassFinder.java:496) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClasses(ClassFinder.java:443) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:413) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:336) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:315) ~[jorphan.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.findClassesThatExtend(JMeterUtils.java:402) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.loadServicesAndScanJars(JMeterUtils.java:349) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.createComboRender(ViewResultsFullVisualizer.java:464) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.createLeftPanel(ViewResultsFullVisualizer.java:438) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.init(ViewResultsFullVisualizer.java:349) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.<init>(ViewResultsFullVisualizer.java:156) ~[ApacheJMeter_components.jar:5.6.3]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.apache.jmeter.gui.GuiPackage.getGuiFromCache(GuiPackage.java:424) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:267) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:238) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addComponent(JMeterTreeModel.java:160) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:123) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.addSubTree(GuiPackage.java:555) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.insertLoadedTree(Load.java:201) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:132) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:103) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.doActionAfterCheck(Load.java:90) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.AbstractActionWithNoRunningTest.doAction(AbstractActionWithNoRunningTest.java:44) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:83) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-05-01 22:12:51,899 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.visualizers.RequestView], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-05-01 22:12:51,901 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.10.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.visualizers.RequestView], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-05-01 22:12:51,903 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+java.util.zip.ZipException: zip END header not found
+	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1495) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1458) ~[?:?]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:724) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:251) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:180) ~[?:?]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:345) ~[?:?]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:316) ~[?:?]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:282) ~[?:?]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesInOnePath(ClassFinder.java:478) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClasses(ClassFinder.java:443) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:413) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:336) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:315) ~[jorphan.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.findClassesThatExtend(JMeterUtils.java:402) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.loadServicesAndScanJars(JMeterUtils.java:349) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.visualizers.RequestPanel.<init>(RequestPanel.java:56) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.SamplerResultTab.init(SamplerResultTab.java:241) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.init(ViewResultsFullVisualizer.java:367) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.<init>(ViewResultsFullVisualizer.java:156) ~[ApacheJMeter_components.jar:5.6.3]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.apache.jmeter.gui.GuiPackage.getGuiFromCache(GuiPackage.java:424) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:267) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:238) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addComponent(JMeterTreeModel.java:160) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:123) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.addSubTree(GuiPackage.java:555) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.insertLoadedTree(Load.java:201) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:132) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:103) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.doActionAfterCheck(Load.java:90) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.AbstractActionWithNoRunningTest.doAction(AbstractActionWithNoRunningTest.java:44) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:83) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-05-01 22:12:51,903 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+java.util.zip.ZipException: zip END header not found
+	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1495) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1458) ~[?:?]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:724) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:251) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:180) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:194) ~[?:?]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesInOnePath(ClassFinder.java:496) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClasses(ClassFinder.java:443) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:413) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:336) ~[jorphan.jar:5.6.3]
+	at org.apache.jorphan.reflect.ClassFinder.findClassesThatExtend(ClassFinder.java:315) ~[jorphan.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.findClassesThatExtend(JMeterUtils.java:402) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.util.JMeterUtils.loadServicesAndScanJars(JMeterUtils.java:349) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.visualizers.RequestPanel.<init>(RequestPanel.java:56) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.SamplerResultTab.init(SamplerResultTab.java:241) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.init(ViewResultsFullVisualizer.java:367) ~[ApacheJMeter_components.jar:5.6.3]
+	at org.apache.jmeter.visualizers.ViewResultsFullVisualizer.<init>(ViewResultsFullVisualizer.java:156) ~[ApacheJMeter_components.jar:5.6.3]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.apache.jmeter.gui.GuiPackage.getGuiFromCache(GuiPackage.java:424) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:267) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.getGui(GuiPackage.java:238) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addComponent(JMeterTreeModel.java:160) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:131) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeModel.addSubTree(JMeterTreeModel.java:123) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.GuiPackage.addSubTree(GuiPackage.java:555) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.insertLoadedTree(Load.java:201) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:132) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.loadProjectFile(Load.java:103) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.Load.doActionAfterCheck(Load.java:90) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.AbstractActionWithNoRunningTest.doAction(AbstractActionWithNoRunningTest.java:44) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:83) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:65) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) [?:?]
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) [?:?]
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2025-05-01 22:12:51,941 INFO o.a.j.s.FileServer: Set new base='/Users/hooby/Project/DEPth/4th_Study/CustomHttpServer'
+2025-05-01 22:12:59,875 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2025-05-01 22:12:59,875 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2025-05-01 22:12:59,875 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2025-05-01 22:12:59,876 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2025-05-01 22:12:59,876 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2025-05-01 22:12:59,910 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.functions.Function], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-05-01 22:12:59,912 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.10.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.functions.Function], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-05-01 22:12:59,914 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
 java.util.zip.ZipException: zip END header not found
 	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
 	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
@@ -305,7 +965,7 @@ java.util.zip.ZipException: zip END header not found
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
 	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
-2025-05-01 08:10:57,009 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
+2025-05-01 22:12:59,915 WARN o.a.j.r.ClassFinder: Can not open the jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jpgc-plugin-manager-1.7.jar, message: zip END header not found
 java.util.zip.ZipException: zip END header not found
 	at java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1649) ~[?:?]
 	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657) ~[?:?]
@@ -331,318 +991,17 @@ java.util.zip.ZipException: zip END header not found
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
 	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
-2025-05-01 08:10:57,012 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
-2025-05-01 08:10:57,035 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
-2025-05-01 08:10:57,035 INFO o.a.j.e.StandardJMeterEngine: Starting 100 threads for group Thread Group.
-2025-05-01 08:10:57,035 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
-2025-05-01 08:10:57,035 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=100 ramp-up=1 delayedStart=false
-2025-05-01 08:10:57,037 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
-2025-05-01 08:10:57,044 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = gimtaehyeon-ui-noteubug.local
-2025-05-01 08:10:57,048 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-2
-2025-05-01 08:10:57,048 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
-2025-05-01 08:10:57,049 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
-2025-05-01 08:10:57,049 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
-2025-05-01 08:10:57,049 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
-2025-05-01 08:10:57,049 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
-2025-05-01 08:10:57,053 INFO o.a.j.t.ThreadGroup: Started thread group number 1
-2025-05-01 08:10:57,053 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
-2025-05-01 08:10:57,058 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-3
-2025-05-01 08:10:57,071 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-4
-2025-05-01 08:10:57,079 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-5
-2025-05-01 08:10:57,091 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-6
-2025-05-01 08:10:57,096 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-7
-2025-05-01 08:10:57,108 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-8
-2025-05-01 08:10:57,120 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-9
-2025-05-01 08:10:57,131 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-10
-2025-05-01 08:10:57,140 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-11
-2025-05-01 08:10:57,150 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-12
-2025-05-01 08:10:57,157 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-13
-2025-05-01 08:10:57,166 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-14
-2025-05-01 08:10:57,181 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-15
-2025-05-01 08:10:57,190 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-16
-2025-05-01 08:10:57,200 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-17
-2025-05-01 08:10:57,208 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-18
-2025-05-01 08:10:57,221 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-19
-2025-05-01 08:10:57,229 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-20
-2025-05-01 08:10:57,240 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-21
-2025-05-01 08:10:57,251 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-22
-2025-05-01 08:10:57,261 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-23
-2025-05-01 08:10:57,267 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-24
-2025-05-01 08:10:57,280 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-25
-2025-05-01 08:10:57,290 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-26
-2025-05-01 08:10:57,296 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-27
-2025-05-01 08:10:57,306 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-28
-2025-05-01 08:10:57,319 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-29
-2025-05-01 08:10:57,327 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-30
-2025-05-01 08:10:57,340 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-31
-2025-05-01 08:10:57,350 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-32
-2025-05-01 08:10:57,356 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-33
-2025-05-01 08:10:57,368 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-34
-2025-05-01 08:10:57,380 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-35
-2025-05-01 08:10:57,391 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-36
-2025-05-01 08:10:57,400 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-37
-2025-05-01 08:10:57,408 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-38
-2025-05-01 08:10:57,417 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-39
-2025-05-01 08:10:57,429 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-40
-2025-05-01 08:10:57,440 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-41
-2025-05-01 08:10:57,448 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-42
-2025-05-01 08:10:57,458 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-43
-2025-05-01 08:10:57,471 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-44
-2025-05-01 08:10:57,476 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-45
-2025-05-01 08:10:57,490 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-46
-2025-05-01 08:10:57,500 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-47
-2025-05-01 08:10:57,506 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-48
-2025-05-01 08:10:57,519 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-49
-2025-05-01 08:10:57,526 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-50
-2025-05-01 08:10:57,536 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-51
-2025-05-01 08:10:57,550 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-52
-2025-05-01 08:10:57,560 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-53
-2025-05-01 08:10:57,565 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-54
-2025-05-01 08:10:57,579 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-55
-2025-05-01 08:10:57,590 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-56
-2025-05-01 08:10:57,600 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-57
-2025-05-01 08:10:57,607 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-58
-2025-05-01 08:10:57,619 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-59
-2025-05-01 08:10:57,630 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-60
-2025-05-01 08:10:57,636 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-61
-2025-05-01 08:10:57,650 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-62
-2025-05-01 08:10:57,661 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-63
-2025-05-01 08:10:57,666 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-64
-2025-05-01 08:10:57,677 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-65
-2025-05-01 08:10:57,687 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-66
-2025-05-01 08:10:57,699 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-67
-2025-05-01 08:10:57,709 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-68
-2025-05-01 08:10:57,719 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-69
-2025-05-01 08:10:57,727 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-70
-2025-05-01 08:10:57,737 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-71
-2025-05-01 08:10:57,749 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-72
-2025-05-01 08:10:57,766 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-73
-2025-05-01 08:10:57,770 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-74
-2025-05-01 08:10:57,774 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-14
-2025-05-01 08:10:57,774 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-3
-2025-05-01 08:10:57,774 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-23
-2025-05-01 08:10:57,774 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-21
-2025-05-01 08:10:57,774 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-23
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-21
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-3
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-18
-2025-05-01 08:10:57,774 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-14
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-16
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-8
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-24
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-9
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-18
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-8
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-15
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-11
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-11
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-15
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-16
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-7
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-7
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-9
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-5
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-17
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-5
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-24
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-17
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-4
-2025-05-01 08:10:57,775 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-10
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-4
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-2
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-20
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-2
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-19
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-12
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-10
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-22
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-12
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-22
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-13
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-13
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-19
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-20
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-6
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
-2025-05-01 08:10:57,776 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-6
-2025-05-01 08:10:57,780 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-75
-2025-05-01 08:10:57,786 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-76
-2025-05-01 08:10:57,787 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-25
-2025-05-01 08:10:57,787 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-25
-2025-05-01 08:10:57,798 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-26
-2025-05-01 08:10:57,798 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-26
-2025-05-01 08:10:57,799 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-77
-2025-05-01 08:10:57,803 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-27
-2025-05-01 08:10:57,803 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-27
-2025-05-01 08:10:57,808 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-78
-2025-05-01 08:10:57,813 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-28
-2025-05-01 08:10:57,813 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-28
-2025-05-01 08:10:57,816 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-79
-2025-05-01 08:10:57,825 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-29
-2025-05-01 08:10:57,825 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-29
-2025-05-01 08:10:57,829 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-80
-2025-05-01 08:10:57,834 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-30
-2025-05-01 08:10:57,834 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-30
-2025-05-01 08:10:57,841 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-81
-2025-05-01 08:10:57,846 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-82
-2025-05-01 08:10:57,847 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-31
-2025-05-01 08:10:57,847 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-31
-2025-05-01 08:10:57,857 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-32
-2025-05-01 08:10:57,857 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-32
-2025-05-01 08:10:57,858 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-83
-2025-05-01 08:10:57,866 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-84
-2025-05-01 08:10:57,878 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-85
-2025-05-01 08:10:57,890 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-86
-2025-05-01 08:10:57,900 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-87
-2025-05-01 08:10:57,910 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-88
-2025-05-01 08:10:57,917 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-89
-2025-05-01 08:10:57,931 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-90
-2025-05-01 08:10:57,935 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-91
-2025-05-01 08:10:57,950 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-92
-2025-05-01 08:10:57,958 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-93
-2025-05-01 08:10:57,966 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-94
-2025-05-01 08:10:57,980 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-95
-2025-05-01 08:10:57,988 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-96
-2025-05-01 08:10:57,997 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-97
-2025-05-01 08:10:58,007 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-98
-2025-05-01 08:10:58,020 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-99
-2025-05-01 08:10:58,029 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-100
-2025-05-01 08:10:58,268 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-39
-2025-05-01 08:10:58,268 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-44
-2025-05-01 08:10:58,268 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-39
-2025-05-01 08:10:58,268 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-44
-2025-05-01 08:10:58,269 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-33
-2025-05-01 08:10:58,269 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-33
-2025-05-01 08:10:58,270 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-45
-2025-05-01 08:10:58,270 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-45
-2025-05-01 08:10:58,271 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-50
-2025-05-01 08:10:58,271 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-50
-2025-05-01 08:10:58,271 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-49
-2025-05-01 08:10:58,271 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-34
-2025-05-01 08:10:58,271 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-49
-2025-05-01 08:10:58,271 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-34
-2025-05-01 08:10:58,271 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-54
-2025-05-01 08:10:58,271 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-54
-2025-05-01 08:10:58,272 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-47
-2025-05-01 08:10:58,272 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-47
-2025-05-01 08:10:58,272 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-38
-2025-05-01 08:10:58,272 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-38
-2025-05-01 08:10:58,272 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-46
-2025-05-01 08:10:58,272 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-46
-2025-05-01 08:10:58,273 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-51
-2025-05-01 08:10:58,273 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-52
-2025-05-01 08:10:58,273 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-51
-2025-05-01 08:10:58,273 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-52
-2025-05-01 08:10:58,273 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-36
-2025-05-01 08:10:58,273 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-36
-2025-05-01 08:10:58,274 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-40
-2025-05-01 08:10:58,274 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-40
-2025-05-01 08:10:58,274 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-37
-2025-05-01 08:10:58,274 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-37
-2025-05-01 08:10:58,275 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-43
-2025-05-01 08:10:58,275 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-43
-2025-05-01 08:10:58,275 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-41
-2025-05-01 08:10:58,275 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-41
-2025-05-01 08:10:58,275 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-53
-2025-05-01 08:10:58,276 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-53
-2025-05-01 08:10:58,276 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-55
-2025-05-01 08:10:58,276 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-55
-2025-05-01 08:10:58,276 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-48
-2025-05-01 08:10:58,276 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-48
-2025-05-01 08:10:58,276 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-42
-2025-05-01 08:10:58,276 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-42
-2025-05-01 08:10:58,277 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-35
-2025-05-01 08:10:58,277 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-35
-2025-05-01 08:10:58,282 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-56
-2025-05-01 08:10:58,282 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-56
-2025-05-01 08:10:58,290 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-57
-2025-05-01 08:10:58,290 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-57
-2025-05-01 08:10:58,303 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-58
-2025-05-01 08:10:58,303 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-58
-2025-05-01 08:10:58,309 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-59
-2025-05-01 08:10:58,309 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-59
-2025-05-01 08:10:58,317 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-60
-2025-05-01 08:10:58,317 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-60
-2025-05-01 08:10:58,331 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-61
-2025-05-01 08:10:58,331 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-61
-2025-05-01 08:10:58,337 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-62
-2025-05-01 08:10:58,337 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-62
-2025-05-01 08:10:58,348 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-63
-2025-05-01 08:10:58,348 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-63
-2025-05-01 08:10:58,359 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-64
-2025-05-01 08:10:58,359 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-64
-2025-05-01 08:10:58,772 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-65
-2025-05-01 08:10:58,772 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-65
-2025-05-01 08:10:58,772 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-67
-2025-05-01 08:10:58,773 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-67
-2025-05-01 08:10:58,773 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-68
-2025-05-01 08:10:58,773 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-68
-2025-05-01 08:10:58,774 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-66
-2025-05-01 08:10:58,774 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-66
-2025-05-01 08:10:58,775 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-72
-2025-05-01 08:10:58,775 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-72
-2025-05-01 08:10:58,776 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-70
-2025-05-01 08:10:58,776 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-70
-2025-05-01 08:10:58,777 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-73
-2025-05-01 08:10:58,777 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-73
-2025-05-01 08:10:58,778 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-76
-2025-05-01 08:10:58,778 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-69
-2025-05-01 08:10:58,778 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-76
-2025-05-01 08:10:58,778 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-69
-2025-05-01 08:10:58,779 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-71
-2025-05-01 08:10:58,779 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-71
-2025-05-01 08:10:58,780 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-74
-2025-05-01 08:10:58,780 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-84
-2025-05-01 08:10:58,780 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-74
-2025-05-01 08:10:58,780 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-78
-2025-05-01 08:10:58,780 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-79
-2025-05-01 08:10:58,781 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-78
-2025-05-01 08:10:58,782 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-79
-2025-05-01 08:10:58,782 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-84
-2025-05-01 08:10:58,783 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-80
-2025-05-01 08:10:58,783 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-82
-2025-05-01 08:10:58,783 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-77
-2025-05-01 08:10:58,783 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-75
-2025-05-01 08:10:58,783 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-80
-2025-05-01 08:10:58,783 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-85
-2025-05-01 08:10:58,783 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-85
-2025-05-01 08:10:58,783 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-81
-2025-05-01 08:10:58,783 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-86
-2025-05-01 08:10:58,783 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-81
-2025-05-01 08:10:58,783 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-83
-2025-05-01 08:10:58,783 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-82
-2025-05-01 08:10:58,783 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-86
-2025-05-01 08:10:58,784 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-87
-2025-05-01 08:10:58,783 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-77
-2025-05-01 08:10:58,784 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-87
-2025-05-01 08:10:58,784 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-75
-2025-05-01 08:10:58,784 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-83
-2025-05-01 08:10:58,788 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-88
-2025-05-01 08:10:58,788 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-88
-2025-05-01 08:10:58,796 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-89
-2025-05-01 08:10:58,796 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-89
-2025-05-01 08:10:58,806 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-90
-2025-05-01 08:10:58,806 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-90
-2025-05-01 08:10:58,814 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-91
-2025-05-01 08:10:58,814 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-91
-2025-05-01 08:10:58,819 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-92
-2025-05-01 08:10:58,819 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-92
-2025-05-01 08:10:58,837 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-93
-2025-05-01 08:10:58,837 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-93
-2025-05-01 08:10:58,844 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-94
-2025-05-01 08:10:58,844 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-94
-2025-05-01 08:10:58,854 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-95
-2025-05-01 08:10:58,854 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-95
-2025-05-01 08:10:58,865 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-96
-2025-05-01 08:10:58,865 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-96
-2025-05-01 08:10:59,278 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-99
-2025-05-01 08:10:59,278 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-97
-2025-05-01 08:10:59,278 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-98
-2025-05-01 08:10:59,278 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-97
-2025-05-01 08:10:59,278 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-98
-2025-05-01 08:10:59,278 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-99
-2025-05-01 08:10:59,280 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-100
-2025-05-01 08:10:59,280 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-100
-2025-05-01 08:10:59,281 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
-2025-05-01 08:10:59,281 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2025-05-01 22:12:59,917 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2025-05-01 22:12:59,947 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2025-05-01 22:12:59,947 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Thread Group.
+2025-05-01 22:12:59,947 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2025-05-01 22:12:59,947 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2025-05-01 22:12:59,949 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2025-05-01 22:12:59,950 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2025-05-01 22:12:59,950 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2025-05-01 22:12:59,956 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = gimtaehyeon-ui-noteubug.local
+2025-05-01 22:12:59,959 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2025-05-01 22:13:00,563 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
+2025-05-01 22:13:00,564 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2025-05-01 22:13:00,566 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2025-05-01 22:13:00,566 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
