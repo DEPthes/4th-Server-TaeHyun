@@ -1,5 +1,6 @@
 package com.hooby.http;
 
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,11 +19,6 @@ public class CustomHttpResponse {
 
     public void setBody (String body){
         this.body = body;
-        // Byte Stream 으로 데이터 보낼거라 Byte 배열 길이로 구함
-        headers.put("Content-Length", String.valueOf(body.getBytes().length));
-
-        // Map Method 를 써서, Content-Type 이 없으면 기본 타입으로 설정한다.
-        headers.putIfAbsent("Content-Type", "text/plain; charset=UTF-8");
     }
 
     public String getBody() {
@@ -35,11 +31,20 @@ public class CustomHttpResponse {
 
     public String toHttpMessage(){
         StringBuilder message = new StringBuilder();
+        byte[] bodyBytes = body.getBytes(StandardCharsets.UTF_8); // Byte Stream 으로 데이터 보낼거라 Byte 배열 길이로 구함
+
+        // Status Line
         message.append("HTTP/1.1 ")
                 .append(statusCode)
                 .append(" ")
                 .append(HttpStatus.getStatusMessage(statusCode))
                 .append("\r\n");
+
+        // Map Method 를 써서, Content-Type 이 없으면 기본 타입으로 설정한다.
+        headers.putIfAbsent("Content-Type", "text/plain; charset=UTF-8");
+        headers.put("Content-Length", String.valueOf(bodyBytes.length));
+        headers.putIfAbsent("Connection", "close");
+
         headers.forEach((key, value) -> message.append(key).append(": ").append(value).append("\r\n"));
         message.append("\r\n").append(body);
         return message.toString();
