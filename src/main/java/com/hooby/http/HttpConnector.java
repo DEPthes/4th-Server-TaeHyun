@@ -27,7 +27,7 @@ public class HttpConnector {
             CustomHttpRequest request = HttpRequestParser.parse(connectionSocket); // Create Parsed HttpRequestObject
 
             CustomHttpResponse response = new CustomHttpResponse();
-            request.setSession(SessionManager.getOrCreateSession(request, response));
+//            request.setSession(SessionManager.getOrCreateSession(request, response)); // The Cause of Fucking Error Sibar
 
             response = servletContainer.dispatch(request); // Create HttpResponseObject
 
