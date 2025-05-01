@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hooby.http.CustomHttpRequest;
 import com.hooby.http.CustomHttpResponse;
 import com.hooby.http.HttpStatus;
+import com.hooby.http.Session;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,13 +19,20 @@ public class UserServlet implements Servlet {
     @Override
     public void service(CustomHttpRequest req, CustomHttpResponse res) {
         String id = req.getPathParams().get("id"); // id 에 매칭되는 값을 저장
+        String path = req.getPath();
         try{
             switch (req.getMethod()) {
                 case "GET" -> {
                     if (id == null) getAllUsers(req, res);
                     else getUserById(id, res);
                 }
-                case "POST" -> createUser(req, res);
+                case "POST" -> {
+                    if ("/login".equals(path)){
+                        handleLogin(req, res);
+                        return;
+                    }
+                    createUser(req, res);
+                }
                 case "PUT" -> updateUser(id, req, res);
                 case "PATCH" -> patchUser(id, req, res);
                 case "DELETE" -> {
@@ -40,6 +48,23 @@ public class UserServlet implements Servlet {
             res.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
             res.setBody("Internal Server Error: " + e.getMessage());
         }
+    }
+
+    private void handleLogin(CustomHttpRequest req, CustomHttpResponse res) throws Exception {
+        Map<String, Object> body = req.getJsonBody();
+        String id = (String) body.get("id");
+
+        Session session = req.getSession();
+
+        if (id == null || !userDb.containsKey(id)) {
+            res.setStatus(HttpStatus.UNAUTHORIZED);
+            res.setBody("Invalid login ID");
+            return;
+        }
+
+        session.setAttribute("user", id);
+        res.setStatus(HttpStatus.OK);
+        res.setBody("Login successful");
     }
 
     // 여기에 GetMapping 어노테이션 이런거 달고 싶다..
