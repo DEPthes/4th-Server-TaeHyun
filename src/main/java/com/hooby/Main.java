@@ -34,9 +34,6 @@ public class Main {
                 }
             });
 
-            // Listener
-            setupListenerManager();
-
             // FilterManager
             FilterManager filterManager = new FilterManager();
             filterManager.addFilter(new SessionFilter());   // 반드시 제일 먼저
@@ -53,21 +50,5 @@ public class Main {
         } catch (Exception e) {
             logger.error("🔴 뭔가 예기치 못한 에러가 발생했습니다.", e);
         }
-    }
-
-    private static void setupListenerManager() {
-        ListenerManager listenerManager = new ListenerManager();
-        listenerManager.addSessionListener(new SessionListener() {
-            @Override
-            public void onSessionCreated(Session session) {
-                System.out.println("🟢 Listener: 세션 생성됨 → " + session.getId());
-            }
-
-            @Override
-            public void onSessionDestroyed(Session session) {
-                System.out.println("🔴 Listener: 세션 제거됨 → " + session.getId());
-            }
-        });
-        SessionManager.setListenerManager(listenerManager);
     }
 }

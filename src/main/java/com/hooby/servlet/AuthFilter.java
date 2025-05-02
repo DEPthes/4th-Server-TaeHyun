@@ -16,7 +16,7 @@ public class AuthFilter implements Filter {
             return;
         }
 
-        Session session = request.getSession();  // 💡 기존 Session 사용
+        Session session = request.getSession();
         Object user = session.getAttribute("user");
 
         if (user == null) {
