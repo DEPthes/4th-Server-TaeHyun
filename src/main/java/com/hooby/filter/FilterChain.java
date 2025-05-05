@@ -1,7 +1,8 @@
-package com.hooby.servlet;
+package com.hooby.filter;
 
 import com.hooby.http.CustomHttpRequest;
 import com.hooby.http.CustomHttpResponse;
+import com.hooby.servlet.Servlet;
 
 import java.util.List;
 

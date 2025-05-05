@@ -1,5 +1,7 @@
 package com.hooby.servlet;
 
+import com.hooby.filter.FilterChain;
+import com.hooby.filter.FilterManager;
 import com.hooby.http.*;
 import com.hooby.listener.ListenerManager;
 import com.hooby.listener.SessionListener;
