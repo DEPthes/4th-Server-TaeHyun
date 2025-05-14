@@ -1,16 +1,30 @@
 package com.hooby.filter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class FilterManager {
-    private final List<Filter> filters = new ArrayList<>();
+    private final List<Filter> filters;
 
-    public void addFilter(Filter filter) {
-        filters.add(filter);
+    public FilterManager(List<Filter> filters) {
+        System.out.println("🧩 생성자 주입됨: " + filters);
+        this.filters = filters;
     }
 
     public List<Filter> getFilters() {
-        return List.copyOf(filters);
+        return filters;
+    }
+
+    public void init() {
+        System.out.println("🟢 FilterManager 초기화됨");
+        for (Filter f : filters) {
+            f.init();
+        }
+    }
+
+    public void destroy() {
+        System.out.println("🔴 FilterManager 종료됨");
+        for (Filter f : filters) {
+            f.destroy();
+        }
     }
 }
