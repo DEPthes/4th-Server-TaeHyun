@@ -8,21 +8,18 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SessionManager {
+    private final Map<String, Session> sessionStore = new ConcurrentHashMap<>();
+    private final String COOKIE_NAME = "JSESSIONID";
 
-    private static final Map<String, Session> sessionStore = new ConcurrentHashMap<>();
-    private static final String COOKIE_NAME = "JSESSIONID";
-    private static ListenerManager listenerManager;
+    private final ListenerManager listenerManager;
 
-    public static void setListenerManager(ListenerManager manager) {
-        listenerManager = manager;
+    public SessionManager(ListenerManager listenerManager) {
+        this.listenerManager = listenerManager;
+        System.out.println("🧩 생성자 주입됨: " + listenerManager.getClass().getSimpleName());
     }
 
-    public static Session getOrCreateSession(CustomHttpRequest request, CustomHttpResponse response) {
-        // 이미 세션이 존재한다면 바로 반환 (중복 방지)
-        if (request.getSession() != null) {
-            return request.getSession();
-        }
-
+    public Session getOrCreateSession(CustomHttpRequest request, CustomHttpResponse response) {
+        if (request.getSession() != null) return request.getSession();
         cleanUpExpiredSessions();
 
         String cookieHeader = request.getHeader("Cookie");
@@ -39,26 +36,20 @@ public class SessionManager {
             }
         }
 
-        // 새 세션 생성
         String newId = UUID.randomUUID().toString();
         Session session = new Session(newId);
         sessionStore.put(newId, session);
         request.setSession(session);
 
         System.out.println("Session created: " + newId + " | Thread: " + Thread.currentThread().getName());
-
         response.setHeader("Set-Cookie", COOKIE_NAME + "=" + newId + "; Path=/; HttpOnly");
 
-        if (listenerManager != null) {
-            listenerManager.notifySessionCreated(session);
-        }
-
+        listenerManager.notifySessionCreated(session);
         return session;
     }
 
-    private static String extractSessionIdFromCookie(String cookieHeader) {
+    private String extractSessionIdFromCookie(String cookieHeader) {
         if (cookieHeader == null) return null;
-
         for (String cookie : cookieHeader.split(";")) {
             cookie = cookie.trim();
             if (cookie.startsWith(COOKIE_NAME + "=")) {
@@ -68,28 +59,29 @@ public class SessionManager {
         return null;
     }
 
-    public static void invalidateSession(String sessionId) {
+    public void invalidateSession(String sessionId) {
         Session session = sessionStore.remove(sessionId);
-        if (session != null && listenerManager != null) {
+        if (session != null) {
             listenerManager.notifySessionDestroyed(session);
         }
     }
 
-    private static void cleanUpExpiredSessions() {
+    private void cleanUpExpiredSessions() {
         Iterator<Map.Entry<String, Session>> it = sessionStore.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry<String, Session> entry = it.next();
             if (entry.getValue().isExpired()) {
                 it.remove();
-                if (listenerManager != null) {
-                    listenerManager.notifySessionDestroyed(entry.getValue());
-                }
+                listenerManager.notifySessionDestroyed(entry.getValue());
             }
         }
     }
 
-    // JUnit 외 사용 금지. 그냥 테스트 전용이니까
-    static void injectSession(String sessionId, Session session) {
-        sessionStore.put(sessionId, session);
+    public void clearAll() {
+        System.out.println("🔴 SessionManager 모든 세션 초기화");
+        for (Session s : sessionStore.values()) {
+            listenerManager.notifySessionDestroyed(s);
+        }
+        sessionStore.clear();
     }
 }
