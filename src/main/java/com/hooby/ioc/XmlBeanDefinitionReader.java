@@ -19,6 +19,16 @@ public class XmlBeanDefinitionReader {
             if (is == null) throw new FileNotFoundException("Classpath resource not found: " + path);
 
             Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
+
+            NodeList importTags = doc.getElementsByTagName("import");
+            for (int i = 0; i < importTags.getLength(); i++) {
+                Element importElem = (Element) importTags.item(i);
+                String resource = importElem.getAttribute("resource");
+                if (!resource.isEmpty()) {
+                    loadBeanDefinitions(resource);
+                }
+            }
+
             NodeList beans = doc.getElementsByTagName("bean");
 
             for (int i = 0; i < beans.getLength(); i++) {
