@@ -1,0 +1,5 @@
+<beans>
+    <bean id="sessionManager" class="com.hooby.http.SessionManager">
+        <constructor-arg ref="listenerManager"/>
+    </bean>
+</beans>

@@ -1,0 +1,16 @@
+<beans>
+    <bean id="sessionFilter" class="com.hooby.filter.SessionFilter">
+        <constructor-arg ref="sessionManager"/>
+    </bean>
+
+    <bean id="filterManager" class="com.hooby.filter.FilterManager"
+          init-method="init" destroy-method="destroy">
+        <constructor-arg>
+            <list>
+                <ref bean="sessionFilter"/>
+                <bean class="com.hooby.filter.LoggingFilter"/>
+                <bean class="com.hooby.filter.AuthFilter"/>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>

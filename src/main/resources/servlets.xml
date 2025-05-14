@@ -1,0 +1,25 @@
+<beans>
+    <bean id="userServlet" class="com.hooby.servlet.UserServlet" init-method="init" destroy-method="cleanup"/>
+    <bean id="testServlet" class="com.hooby.servlet.TestServlet" init-method="init" destroy-method="cleanup"/>
+
+    <bean id="servletInitializer" class="com.hooby.servlet.ServletInitializer"
+          init-method="init" destroy-method="cleanup">
+        <constructor-arg>
+            <list>
+                <ref bean="userServlet"/>
+                <ref bean="testServlet"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="servletMapper" class="com.hooby.servlet.ServletMapper">
+        <constructor-arg>
+            <map>
+                <entry key="/users" value="userServlet"/>
+                <entry key="/users/{id}" value="userServlet"/>
+                <entry key="/test" value="testServlet"/>
+                <entry key="/login" value="userServlet"/>
+            </map>
+        </constructor-arg>
+    </bean>
+</beans>

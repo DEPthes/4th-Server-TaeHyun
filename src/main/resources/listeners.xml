@@ -1,0 +1,12 @@
+<beans>
+    <bean id="listenerManager" class="com.hooby.listener.ListenerManager">
+        <constructor-arg>
+            <list/>
+        </constructor-arg>
+        <constructor-arg>
+            <list>
+                <bean class="com.hooby.listener.LoggingSessionListener"/>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>
