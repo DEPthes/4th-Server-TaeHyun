@@ -1,0 +1,20 @@
+<beans>
+    <bean id="userRepository" class="com.hooby.repository.UserRepository" />
+
+    <bean id="userService"
+          class="com.hooby.service.UserService"
+          init-method="init"
+          destroy-method="cleanup">
+        <constructor-arg ref="userRepository" />
+    </bean>
+
+    <bean id="userServlet"
+          class="com.hooby.servlet.UserServlet"
+          init-method="init"
+          destroy-method="cleanup" />
+
+    <bean id="testServlet"
+          class="com.hooby.servlet.TestServlet"
+          init-method="init"
+          destroy-method="cleanup" />
+</beans>
