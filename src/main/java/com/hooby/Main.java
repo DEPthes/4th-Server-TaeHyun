@@ -1,10 +1,7 @@
 package com.hooby;
 
-import com.hooby.filter.AuthFilter;
-import com.hooby.filter.FilterManager;
-import com.hooby.filter.LoggingFilter;
-import com.hooby.filter.SessionFilter;
 import com.hooby.http.*;
+import com.hooby.ioc.ApplicationContext;
 import com.hooby.servlet.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,43 +11,17 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            // Servlet Mapping
-            ServletMapper mapper = new ServletMapper();
-            mapper.registerServlet("/users", "UserServlet");
-            mapper.registerServlet("/users/{id}", "UserServlet");
-            mapper.registerServlet("/test", "TestServlet");
-            mapper.registerServlet("/login", "UserServlet");
-
-            // Servlet Init
-            ServletInitializer initializer = new ServletInitializer();
-
-            UserServlet sharedUserServlet = new UserServlet();
-            initializer.registerFactory("UserServlet", () -> sharedUserServlet);
-            initializer.registerFactory("TestServlet", () -> (req, res) -> {
-                try {
-                    String sessionUser = (String) req.getSession().getAttribute("user");
-                    Thread.sleep(500);
-                    res.setBody("Hello " + (sessionUser != null ? sessionUser : "guest"));
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            });
-
-            // FilterManager
-            FilterManager filterManager = new FilterManager();
-            filterManager.addFilter(new SessionFilter());   // 반드시 제일 먼저
-            filterManager.addFilter(new LoggingFilter());
-            filterManager.addFilter(new AuthFilter());
-
-            // Servlet Container
-            ServletContainer container = new ServletContainer(mapper, initializer, filterManager);
+            ApplicationContext context = new ApplicationContext("beans.xml");
+            ServletContainer container = (ServletContainer) context.getBean("servletContainer");
             CustomHttpServer server = new CustomHttpServer(8080, container);
-
-            // Run
             server.run();
 
+            Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+                logger.info("🟡 Shutdown Hook 실행 중...");
+                context.close();
+            }));
         } catch (Exception e) {
-            logger.error("🔴 뭔가 예기치 못한 에러가 발생했습니다.", e);
+            logger.error("🔴 예기치 못한 에러", e);
         }
     }
 }
