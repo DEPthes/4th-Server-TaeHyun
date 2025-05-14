@@ -5,7 +5,6 @@ import com.hooby.servlet.ServletContainer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.DataOutputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
@@ -26,8 +25,8 @@ public class HttpConnector {
             // connectionSocket 으로 부터 사용자의 요청을 가져옴 -> HttpMsg 가 옴
             CustomHttpRequest request = HttpRequestParser.parse(connectionSocket); // Create Parsed HttpRequestObject
 
-            CustomHttpResponse response = new CustomHttpResponse();
-//            request.setSession(SessionManager.getOrCreateSession(request, response)); // The Cause of Fucking Error Sibar
+//            CustomHttpResponse response = new CustomHttpResponse();
+            CustomHttpResponse response;
 
             response = servletContainer.dispatch(request); // Create HttpResponseObject
 
