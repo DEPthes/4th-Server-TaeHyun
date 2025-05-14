@@ -2,6 +2,7 @@ package com.hooby;
 
 import com.hooby.http.*;
 import com.hooby.ioc.ApplicationContext;
+import com.hooby.ioc.ClassPathXmlApplicationContext;
 import com.hooby.servlet.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            ApplicationContext context = new ApplicationContext("beans.xml");
+            ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
             ServletContainer container = (ServletContainer) context.getBean("servletContainer");
             CustomHttpServer server = new CustomHttpServer(8080, container);
             server.run();

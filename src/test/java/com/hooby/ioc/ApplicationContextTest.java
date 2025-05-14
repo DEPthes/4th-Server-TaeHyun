@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ApplicationContextTest {
 
-    ApplicationContext context = new ApplicationContext("test-beans.xml");
+    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("test-beans.xml");
 
     @AfterEach
     void tearDown() {
