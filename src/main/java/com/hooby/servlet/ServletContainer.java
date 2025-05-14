@@ -4,7 +4,6 @@ import com.hooby.filter.FilterChain;
 import com.hooby.filter.FilterManager;
 import com.hooby.http.*;
 import com.hooby.listener.ListenerManager;
-import com.hooby.listener.SessionListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,28 +18,19 @@ public class ServletContainer {
     public ServletContainer(
             ServletMapper servletMapper,
             ServletInitializer servletInitializer,
-            FilterManager filterManager
+            FilterManager filterManager,
+            ListenerManager listenerManager
     ) {
         this.servletMapper = servletMapper;
         this.servletInitializer = servletInitializer;
         this.filterManager = filterManager;
+        this.listenerManager = listenerManager;
 
-        // ServletContainer 내부에서 ListenerManager 생성 및 등록
-        this.listenerManager = new ListenerManager();
-        this.listenerManager.addSessionListener(new SessionListener() {
-            @Override
-            public void onSessionCreated(Session session) {
-                System.out.println("🟢 Listener: 세션 생성됨 → " + session.getId());
-            }
-
-            @Override
-            public void onSessionDestroyed(Session session) {
-                System.out.println("🔴 Listener: 세션 제거됨 → " + session.getId());
-            }
-        });
-
-        // 세션 매니저에 등록
-        SessionManager.setListenerManager(listenerManager);
+        System.out.println("🧩 생성자 주입됨: "
+                + "servletMapper=" + servletMapper.getClass().getSimpleName()
+                + ", servletInitializer=" + servletInitializer.getClass().getSimpleName()
+                + ", filterManager=" + filterManager.getClass().getSimpleName()
+                + ", listenerManager=" + listenerManager.getClass().getSimpleName());
     }
 
     public CustomHttpResponse dispatch(CustomHttpRequest request) {
@@ -61,5 +51,15 @@ public class ServletContainer {
         chain.doFilter(request, response);
 
         return response;
+    }
+
+    public void init() {
+        System.out.println("🟢 ServletContainer 초기화됨");
+        listenerManager.notifyInit();
+    }
+
+    public void cleanup() {
+        System.out.println("🔴 ServletContainer 종료됨");
+        listenerManager.notifyDestroy();
     }
 }

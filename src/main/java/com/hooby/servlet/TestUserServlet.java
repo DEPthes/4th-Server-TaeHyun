@@ -15,4 +15,12 @@ public class TestUserServlet implements Servlet{
         response.setStatus(200);
         response.setBody(body);
     }
+
+    public void init() {
+        System.out.println("🟢 TestUserServlet 초기화됨");
+    }
+
+    public void cleanup() {
+        System.out.println("🔴 TestUserServlet 자원 해제됨");
+    }
 }

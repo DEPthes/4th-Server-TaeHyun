@@ -23,4 +23,12 @@ public class TestServlet implements Servlet {
         String responseBody = "Hello => " + userAgent ;
         response.setBody(responseBody);
     }
+
+    public void init() {
+        System.out.println("🟢 TestServlet 초기화됨");
+    }
+
+    public void cleanup() {
+        System.out.println("🔴 TestServlet 자원 해제됨");
+    }
 }

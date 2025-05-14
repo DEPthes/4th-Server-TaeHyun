@@ -2,11 +2,10 @@ package com.hooby.servlet;
 
 import com.hooby.routing.RouteMatcher;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ServletMapper {
+    private final List<RouteBinding> routes = new ArrayList<>();
 
     private static class RouteBinding {
         final RouteMatcher matcher;
@@ -18,7 +17,11 @@ public class ServletMapper {
         }
     }
 
-    private final List<RouteBinding> routes = new ArrayList<>();
+    public ServletMapper(Map<String, String> routeMap) {
+        for (Map.Entry<String, String> entry : routeMap.entrySet()) {
+            registerServlet(entry.getKey(), entry.getValue());
+        }
+    }
 
     public void registerServlet(String routePattern, String servletName) {
         routes.add(new RouteBinding(new RouteMatcher(routePattern), servletName));

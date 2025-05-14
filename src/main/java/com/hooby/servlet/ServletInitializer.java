@@ -1,36 +1,37 @@
 package com.hooby.servlet;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
 public class ServletInitializer {
-    // 1. 등록된 서블릿 생성 함수 모음
     private final Map<String, Supplier<Servlet>> servletFactories = new HashMap<>();
-
-    // 2. 실제 생성되어 Heap 에 올라간 서블릿 인스턴스
     private final Map<String, Servlet> servletCache = new HashMap<>();
 
-    // 서블릿 생성 팩토리 등록
-    public void registerFactory(String servletName, Supplier<Servlet> creator) {
-        servletFactories.put(servletName, creator);
+    // DI 방식으로 서블릿들을 모두 주입받음
+    public ServletInitializer(List<Servlet> servlets) {
+        for (Servlet servlet : servlets) {
+            String className = servlet.getClass().getSimpleName();
+            String key = Character.toLowerCase(className.charAt(0)) + className.substring(1); // ex: "UserServlet" → "userServlet"
+            servletFactories.put(key, () -> servlet);
+        }
+        System.out.println("🧩 생성자 주입됨: " + servletFactories.keySet());
+
     }
 
-    // 서블릿 인스턴스 반환 (없으면 초기화하여 생성 후 캐싱)
     public Servlet getOrCreate(String servletName) {
-        // 이미 캐시에 있다면 반환
-        if (servletCache.containsKey(servletName)) {
-            return servletCache.get(servletName);
-        }
+        return servletCache.computeIfAbsent(servletName, name -> {
+            Supplier<Servlet> creator = servletFactories.get(name);
+            if (creator == null) throw new IllegalArgumentException("❌ 등록된 서블릿 없음: " + name);
+            return creator.get();
+        });
+    }
 
-        // 없으면 팩토리 함수로 생성
-        Supplier<Servlet> creator = servletFactories.get(servletName);
-        if (creator == null) {
-            throw new IllegalArgumentException("❌ 서블릿 팩토리가 등록되지 않음: " + servletName);
-        }
-
-        Servlet servlet = creator.get();
-        servletCache.put(servletName, servlet); // 캐시에 저장
-        return servlet;
+    public void init() {
+        System.out.println("🟢 ServletInitializer 초기화됨");
+    }
+    public void cleanup() {
+        System.out.println("🔴 ServletInitializer 종료됨");
     }
 }

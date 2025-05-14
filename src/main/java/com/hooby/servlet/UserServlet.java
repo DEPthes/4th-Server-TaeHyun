@@ -170,4 +170,12 @@ public class UserServlet implements Servlet {
         res.setStatus(HttpStatus.OK);
         res.setBody("User deleted");
     }
+
+    public void init() {
+        System.out.println("🟢 UserServlet 초기화됨");
+    }
+
+    public void cleanup() {
+        System.out.println("🔴 UserServlet 자원 해제됨");
+    }
 }
