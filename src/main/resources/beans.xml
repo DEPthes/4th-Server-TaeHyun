@@ -1,0 +1,75 @@
+<beans>
+
+    <!-- 서블릿 매퍼 -->
+    <bean id="servletMapper" class="com.hooby.servlet.ServletMapper">
+        <constructor-arg>
+            <map>
+                <entry key="/users" value="userServlet"/>
+                <entry key="/users/{id}" value="userServlet"/>
+                <entry key="/test" value="testServlet"/>
+                <entry key="/login" value="userServlet"/>
+            </map>
+        </constructor-arg>
+    </bean>
+
+    <!-- ListenerManager -->
+    <bean id="listenerManager" class="com.hooby.listener.ListenerManager">
+        <constructor-arg>
+            <list/> <!-- ServerListener -->
+        </constructor-arg>
+        <constructor-arg>
+            <list>
+                <bean class="com.hooby.listener.LoggingSessionListener"/>
+            </list> <!-- SessionListener -->
+        </constructor-arg>
+    </bean>
+
+    <!-- SessionManager -->
+    <bean id="sessionManager" class="com.hooby.http.SessionManager">
+        <constructor-arg ref="listenerManager"/>
+    </bean>
+
+    <!-- SessionFilter (id 명시 필요) -->
+    <bean id="sessionFilter" class="com.hooby.filter.SessionFilter">
+        <constructor-arg ref="sessionManager"/>
+    </bean>
+
+    <!-- 필터 매니저 -->
+    <bean id="filterManager" class="com.hooby.filter.FilterManager"
+          init-method="init" destroy-method="destroy">
+        <constructor-arg>
+            <list>
+                <ref bean="sessionFilter"/>
+                <bean class="com.hooby.filter.LoggingFilter"/>
+                <bean class="com.hooby.filter.AuthFilter"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!-- 서블릿 -->
+    <bean id="userServlet" class="com.hooby.servlet.UserServlet"
+          init-method="init" destroy-method="cleanup"/>
+    <bean id="testServlet" class="com.hooby.servlet.TestServlet"
+          init-method="init" destroy-method="cleanup"/>
+
+    <!-- 서블릿 이니셜라이저 -->
+    <bean id="servletInitializer" class="com.hooby.servlet.ServletInitializer"
+          init-method="init" destroy-method="cleanup">
+        <constructor-arg>
+            <list>
+                <ref bean="userServlet"/>
+                <ref bean="testServlet"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!-- 서블릿 컨테이너 -->
+    <bean id="servletContainer" class="com.hooby.servlet.ServletContainer"
+          init-method="init" destroy-method="cleanup">
+        <constructor-arg ref="servletMapper"/>
+        <constructor-arg ref="servletInitializer"/>
+        <constructor-arg ref="filterManager"/>
+        <constructor-arg ref="listenerManager"/>
+    </bean>
+
+</beans>
