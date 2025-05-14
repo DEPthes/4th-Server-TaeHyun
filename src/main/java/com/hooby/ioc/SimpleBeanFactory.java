@@ -24,6 +24,12 @@ public class SimpleBeanFactory implements BeanFactory {
         if (def == null) throw new RuntimeException("❌ 등록되지 않은 빈입니다: " + id);
 
         try {
+            // 이걸로 한번 def 을 들여다 봅시다.
+            System.out.println(
+                "\n\nBeanDefinition Class Name : " + def.getClassName() +
+                "\nBeanDefinition Dependencies Name : " + def.getConstructorArgs() +
+                "\nBeanDefinition Properties Name : " + def.getProperties() + "\n\n"
+            );
             Class<?> clazz = Class.forName(def.getClassName());
             logger.debug("✅ 클래스 로딩: {}", clazz.getName());
 
@@ -40,55 +46,63 @@ public class SimpleBeanFactory implements BeanFactory {
     }
 
     private Object createInstance(Class<?> clazz, BeanDefinition def) throws Exception {
+        /* Default Constructor Case */
         if (def.getConstructorArgs().isEmpty()) {
             return clazz.getDeclaredConstructor().newInstance();
         }
 
+        /* Parameterized Constructor (DI Target) */
+
+        // Define arguments list
         List<Object> args = new ArrayList<>();
         for (Object arg : def.getConstructorArgs()) {
-            args.add(resolveValue(arg));
+            args.add(resolveValue(arg)); // resolveValue = return bean (∵ DI 대상이 객체)
         }
 
-        Constructor<?> ctor = selectMatchingConstructor(clazz, args);
+        // Matching Constructor
+        Constructor<?> ctor = selectMatchingConstructor(clazz, args); // Matched Constructor
         if (ctor == null) throw new RuntimeException("❌ 적절한 생성자를 찾을 수 없습니다: " + def.getId());
 
         logger.debug("✅ 선택된 생성자: {}", ctor);
-        Object instance = ctor.newInstance(args.toArray());
+        Object instance = ctor.newInstance(args.toArray()); // Create Instance with args (∵ Parameterized Constructor)
         logger.debug("✅ 인스턴스 생성 완료: {}", clazz.getName());
         return instance;
     }
 
     private Constructor<?> selectMatchingConstructor(Class<?> clazz, List<Object> args) {
-        for (Constructor<?> ctor : clazz.getDeclaredConstructors()) {
-            if (ctor.getParameterCount() != args.size()) continue;
+        for (Constructor<?> ctor : clazz.getDeclaredConstructors()) { // retrieve all constructors
+            if (ctor.getParameterCount() != args.size()) continue; // Matching DefinitionBean info
 
-            boolean match = true;
+            boolean match = true; // Default Setting
             Class<?>[] paramTypes = ctor.getParameterTypes();
             for (int i = 0; i < paramTypes.length; i++) {
-                Object actual = args.get(i);
-                if (!paramTypes[i].isAssignableFrom(actual.getClass())) {
+                Object actual = args.get(i); // args are beans
+                if (!paramTypes[i].isAssignableFrom(actual.getClass())) { // isNotAssignable? -> mismatch
                     match = false;
                     break;
                 }
             }
-            if (match) return ctor;
+            if (match) return ctor; // return Matched Constructor
         }
         return null;
     }
 
     private void injectProperties(Class<?> clazz, Object instance, BeanDefinition def) throws Exception {
         for (PropertyValue pv : def.getProperties()) {
+            // Pattern Matching to find setters
             String setterName = "set" + Character.toUpperCase(pv.getName().charAt(0)) + pv.getName().substring(1);
+
+            // value : The target instance to inject
             Object value = resolveValue(pv.getRef());
 
             Method setter = null;
-            for (Method method : clazz.getMethods()) {
-                if (method.getName().equals(setterName) && method.getParameterCount() == 1) {
-                    Class<?> paramType = method.getParameterTypes()[0];
-                    if (paramType.isAssignableFrom(value.getClass()) ||
-                            (paramType == List.class && value instanceof List) ||
-                            (paramType == Map.class && value instanceof Map)) {
-                        setter = method;
+            for (Method method : clazz.getMethods()) { // retrieve all methods
+                if (method.getName().equals(setterName) && method.getParameterCount() == 1) { // Matching setter method
+                    Class<?> paramType = method.getParameterTypes()[0]; // setter parameter type
+                    if (paramType.isAssignableFrom(value.getClass()) || // isAssignable?
+                            (paramType == List.class && value instanceof List) || // beans.xml 에서 객체 여러 개를 list 로 묶은 경우
+                            (paramType == Map.class && value instanceof Map)) { // beans.xml 에서 객체를 map 으로 묶은 경우 (Servlet Mapper)
+                        setter = method; // confirm setter
                         break;
                     }
                 }
@@ -96,39 +110,40 @@ public class SimpleBeanFactory implements BeanFactory {
 
             if (setter == null) throw new RuntimeException("❌ setter 메서드를 찾을 수 없습니다: " + setterName);
             logger.debug("✅ setter 주입: {} → {}", setter.getName(), value.getClass().getName());
-            setter.invoke(instance, value);
+            setter.invoke(instance, value); // run setter method dynamically
         }
     }
 
     private void invokeInitMethod(Class<?> clazz, Object instance, BeanDefinition def) throws Exception {
-        if (def.getInitMethod() != null) {
-            Method init = clazz.getMethod(def.getInitMethod());
+        if (def.getInitMethod() != null) { // If InitMethod is Exist
+            Method init = clazz.getMethod(def.getInitMethod()); // retrieve init method
             logger.debug("✅ init-method 실행: {}", init.getName());
-            init.invoke(instance);
+            init.invoke(instance); // run init method dynamically for managing life cycle
         }
     }
 
     private Object resolveValue(Object ref) {
+        // Selective Recursion Case : s (=ref) : Bean ID Case -> 해당 ID 에 대한 Bean 생성 후 반환
         if (ref instanceof String s) return getBean(s);
         if (ref instanceof List<?> list) {
             List<Object> resolved = new ArrayList<>();
             for (Object item : list) {
                 if (item instanceof String refId) resolved.add(getBean(refId));
-                else resolved.add(item);
+                else resolved.add(item); // already resolved value
             }
             return resolved;
         }
-        return ref;
+        return ref; // already resolved value (Terminate condition of Recursion)
     }
 
     @Override
     public void close() {
-        for (Map.Entry<String, Object> entry : singletonObjects.entrySet()) {
-            BeanDefinition def = beanDefinitionMap.get(entry.getKey());
-            if (def.getDestroyMethod() != null) {
+        for (Map.Entry<String, Object> entry : singletonObjects.entrySet()) { // retrieve all singleton beans
+            BeanDefinition def = beanDefinitionMap.get(entry.getKey()); // bean key 로 DefinitionMap 에서 찾아서 def 정의
+            if (def.getDestroyMethod() != null) { // If Destroy Method is Exist (case : 메타 데이터 상에 있었음? -> yes)
                 try {
                     Method destroy = entry.getValue().getClass().getMethod(def.getDestroyMethod());
-                    destroy.invoke(entry.getValue());
+                    destroy.invoke(entry.getValue()); // run destroy method for managing lifecycle
                 } catch (Exception e) {
                     System.err.println("❌ destroy-method 실행 실패: " + def.getId());
                 }
