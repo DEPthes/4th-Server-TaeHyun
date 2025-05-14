@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+            ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml", "filters.xml");
             ServletContainer container = (ServletContainer) context.getBean("servletContainer");
             CustomHttpServer server = new CustomHttpServer(8080, container);
             server.run();
