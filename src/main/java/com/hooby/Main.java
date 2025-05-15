@@ -27,12 +27,9 @@ public class Main {
 
             // pointcut -> confirm join point
             ExecutionPointcut pointcut = ExecutionPointcutParser.parse(
-                    "execution(* *.*ServiceImpl.*(..))"
+                    "execution(* com.hooby.service.UserServiceImpl.*(..))"
+//                    "execution(* *.*ServiceImpl.*(..))"
             );
-
-//            ExecutionPointcut pointcut = ExecutionPointcutParser.parse(
-//                    "execution(* com.hooby.service.UserServiceImpl.*(..))"
-//            );
 
             // 트랜잭션 Advice
             processor.addAdvisor(new Advisor(pointcut, new TransactionAdvice(txManager)));
