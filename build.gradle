@@ -22,6 +22,9 @@ dependencies {
 
     // JSON
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+
+    // H2
+    implementation 'com.h2database:h2:2.2.224'
 }
 
 test {

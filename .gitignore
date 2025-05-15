@@ -49,3 +49,6 @@ out
 gen
 .gradle
 build
+
+## Database ##
+*testdb*
