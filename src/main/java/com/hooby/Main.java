@@ -22,7 +22,7 @@ public class Main {
             // ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml"); // 리팩터링 할 것
 
             // AOP 프록시 설정
-            ProxyBeanPostProcessor processor = new ProxyBeanPostProcessor();
+            BeanPostProcessor processor = new BeanPostProcessor();
             TransactionManager txManager = new TransactionManager();
 
             // pointcut -> confirm join point

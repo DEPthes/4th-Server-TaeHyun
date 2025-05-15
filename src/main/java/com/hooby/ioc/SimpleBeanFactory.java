@@ -12,7 +12,7 @@ public class SimpleBeanFactory implements BeanFactory {
     protected final Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();
     protected final Map<String, Object> singletonObjects = new HashMap<>();
     private static final Logger logger = LoggerFactory.getLogger(SimpleBeanFactory.class);
-    private final List<ProxyBeanPostProcessor> postProcessors = new ArrayList<>();
+    private final List<BeanPostProcessor> postProcessors = new ArrayList<>();
 
     public void registerBeanDefinition(BeanDefinition def) {
         beanDefinitionMap.put(def.getId(), def);
@@ -33,7 +33,7 @@ public class SimpleBeanFactory implements BeanFactory {
             invokeInitMethod(clazz, instance, def);
 
             // AOP Proxy 적용
-            for (ProxyBeanPostProcessor processor : postProcessors) {
+            for (BeanPostProcessor processor : postProcessors) {
                 instance = processor.postProcess(instance); // AOP Proxy 로 Wrapping
             }
 
@@ -151,7 +151,7 @@ public class SimpleBeanFactory implements BeanFactory {
         }
     }
 
-    public void addPostProcessor(ProxyBeanPostProcessor processor) {
+    public void addPostProcessor(BeanPostProcessor processor) {
         postProcessors.add(processor);
     }
 }

@@ -5,7 +5,7 @@ import com.hooby.aop.*;
 import java.lang.reflect.Method;
 import java.util.*;
 
-public class ProxyBeanPostProcessor {
+public class BeanPostProcessor {
 
     private final List<Advisor> advisors = new ArrayList<>();
 
