@@ -1,6 +1,17 @@
 <beans>
-    <bean id="userServlet" class="com.hooby.servlet.UserServlet" init-method="init" destroy-method="cleanup"/>
+    <bean id="userServlet" class="com.hooby.servlet.UserServlet" init-method="init" destroy-method="cleanup">
+        <property name="userService" ref="userService"/>
+    </bean>
+
     <bean id="testServlet" class="com.hooby.servlet.TestServlet" init-method="init" destroy-method="cleanup"/>
+
+    <bean id="orderServlet" class="com.hooby.servlet.OrderServlet" init-method="init" destroy-method="cleanup">
+        <property name="orderService" ref="orderService"/>
+    </bean>
+
+    <bean id="paymentServlet" class="com.hooby.servlet.PaymentServlet" init-method="init" destroy-method="cleanup">
+        <property name="paymentService" ref="paymentService"/>
+    </bean>
 
     <bean id="servletInitializer" class="com.hooby.servlet.ServletInitializer"
           init-method="init" destroy-method="cleanup">
@@ -8,6 +19,8 @@
             <list>
                 <ref bean="userServlet"/>
                 <ref bean="testServlet"/>
+                <ref bean="orderServlet"/>
+                <ref bean="paymentServlet"/>
             </list>
         </constructor-arg>
     </bean>
@@ -17,8 +30,12 @@
             <map>
                 <entry key="/users" value="userServlet"/>
                 <entry key="/users/{id}" value="userServlet"/>
-                <entry key="/test" value="testServlet"/>
+                <entry key="/users/fail" value="userServlet"/>
                 <entry key="/login" value="userServlet"/>
+                <entry key="/orders" value="orderServlet"/>
+                <entry key="/payments" value="paymentServlet"/>
+                <entry key="/test" value="testServlet"/>
+                <entry key="/test/fail" value="testServlet"/>
             </map>
         </constructor-arg>
     </bean>

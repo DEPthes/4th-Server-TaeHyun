@@ -1,8 +1,9 @@
 <beans>
     <import resource="servlets.xml"/>
-<!--    <import resource="filters.xml"/>-->
+    <import resource="filters.xml"/>
     <import resource="listeners.xml"/>
     <import resource="sessions.xml"/>
+    <import resource="services.xml"/>
 
     <bean id="servletContainer" class="com.hooby.servlet.ServletContainer"
           init-method="init" destroy-method="cleanup">

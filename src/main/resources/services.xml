@@ -1,0 +1,13 @@
+<beans>
+    <bean id="transactionManager" class="com.hooby.tx.TransactionManager" />
+
+    <bean id="userDao" class="com.hooby.dao.UserDao">
+        <property name="transactionManager" ref="transactionManager" />
+    </bean>
+
+    <bean id="userService" class="com.hooby.service.UserServiceImpl">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+    <bean id="orderService" class="com.hooby.service.OrderServiceImpl"/>
+    <bean id="paymentService" class="com.hooby.service.PaymentServiceImpl"/>
+</beans>
