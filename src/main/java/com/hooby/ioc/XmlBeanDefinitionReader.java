@@ -19,7 +19,7 @@ public class XmlBeanDefinitionReader {
             InputStream is = getClass().getClassLoader().getResourceAsStream(path);
             if (is == null) throw new FileNotFoundException("Classpath resource not found: " + path);
 
-            // xml parsing
+            // xml parsing : => XML 을 DOM 객체로 Parsing 하겠다. 즉, 파일을 객체모델로 변환하겠다. 역직렬화 느낌?
             Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
 
             // parsing <import/> tag for reader delegator

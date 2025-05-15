@@ -12,6 +12,7 @@ public class SimpleBeanFactory implements BeanFactory {
     protected final Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();
     protected final Map<String, Object> singletonObjects = new HashMap<>();
     private static final Logger logger = LoggerFactory.getLogger(SimpleBeanFactory.class);
+    private final List<ProxyBeanPostProcessor> postProcessors = new ArrayList<>();
 
     public void registerBeanDefinition(BeanDefinition def) {
         beanDefinitionMap.put(def.getId(), def);
@@ -24,18 +25,17 @@ public class SimpleBeanFactory implements BeanFactory {
         if (def == null) throw new RuntimeException("❌ 등록되지 않은 빈입니다: " + id);
 
         try {
-            // 이걸로 한번 def 을 들여다 봅시다.
-            System.out.println(
-                "\n\nBeanDefinition Class Name : " + def.getClassName() +
-                "\nBeanDefinition Dependencies Name : " + def.getConstructorArgs() +
-                "\nBeanDefinition Properties Name : " + def.getProperties() + "\n\n"
-            );
-            Class<?> clazz = Class.forName(def.getClassName());
+            Class<?> clazz = Class.forName(def.getClassName()); // 내부적으로 Class Loader 를 사용해서 동적 클래스를 로딩한다.
             logger.debug("✅ 클래스 로딩: {}", clazz.getName());
 
             Object instance = createInstance(clazz, def);
             injectProperties(clazz, instance, def);
             invokeInitMethod(clazz, instance, def);
+
+            // AOP Proxy 적용
+            for (ProxyBeanPostProcessor processor : postProcessors) {
+                instance = processor.postProcess(instance); // AOP Proxy 로 Wrapping
+            }
 
             singletonObjects.put(id, instance);
             return instance;
@@ -149,5 +149,9 @@ public class SimpleBeanFactory implements BeanFactory {
                 }
             }
         }
+    }
+
+    public void addPostProcessor(ProxyBeanPostProcessor processor) {
+        postProcessors.add(processor);
     }
 }
