@@ -11,7 +11,7 @@ public class AuthFilter implements Filter {
         String path = request.getPath();
 
         // 인증 없이 접근 가능한 경로 예외 처리
-        if (isPublicPath(path)) {
+        if (isPublicPath(path, request.getMethod())) {
             chain.doFilter(request, response);
             return;
         }
@@ -30,7 +30,8 @@ public class AuthFilter implements Filter {
         chain.doFilter(request, response);
     }
 
-    private boolean isPublicPath(String path) {
-        return path.equals("/login") || path.equals("/users");
+    private boolean isPublicPath(String path, String method) {
+        return (path.equals("/login")) ||
+                (path.equals("/users") && method.equals("POST")); // 회원가입 허용
     }
 }
