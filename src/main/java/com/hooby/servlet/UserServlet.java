@@ -2,33 +2,39 @@ package com.hooby.servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hooby.http.*;
+import com.hooby.service.UserService;
 
-import java.util.HashMap;
 import java.util.Map;
-
+import java.util.NoSuchElementException;
 
 public class UserServlet implements Servlet {
 
-    // 간단한 메모리 저장소 (DB 대용)
-    private final Map<String, Map<String, Object>> userDb = new HashMap<>();
     private final ObjectMapper objectMapper = new ObjectMapper();
+    private UserService userService;
+
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
 
     @Override
     public void service(CustomHttpRequest req, CustomHttpResponse res) {
-        String id = req.getPathParams().get("id"); // id 에 매칭되는 값을 저장
+        String id = req.getPathParams().get("id");
         String path = req.getPath();
-        try{
+
+        try {
             switch (req.getMethod()) {
                 case "GET" -> {
                     if (id == null) getAllUsers(req, res);
                     else getUserById(id, res);
                 }
                 case "POST" -> {
-                    if ("/login".equals(path)){
+                    if ("/login".equals(path)) {
                         handleLogin(req, res);
-                        return;
+                    } else if ("/users/fail".equals(path)) {
+                        createUserWithFailure(req, res); // 트랜잭션 테스트용 추가
+                    } else {
+                        createUser(req, res);
                     }
-                    createUser(req, res);
                 }
                 case "PUT" -> updateUser(id, req, res);
                 case "PATCH" -> patchUser(id, req, res);
@@ -41,134 +47,118 @@ public class UserServlet implements Servlet {
                     res.setBody("Method Not Allowed");
                 }
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             res.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
             res.setBody("Internal Server Error: " + e.getMessage());
         }
+    }
+
+    private void createUser(CustomHttpRequest req, CustomHttpResponse res) {
+        Map<String, Object> body = req.getJsonBody();
+        try {
+            userService.createUser(body);
+            res.setStatus(HttpStatus.CREATED);
+            res.setBody("User created");
+        } catch (IllegalArgumentException e) {
+            res.setStatus(HttpStatus.BAD_REQUEST);
+            res.setBody(e.getMessage());
+        } catch (RuntimeException e) {
+            res.setStatus(HttpStatus.CONFLICT);
+            res.setBody(e.getMessage());
+        }
+    }
+
+    // 트랜잭션 테스트용 추가 메서드
+    private void createUserWithFailure(CustomHttpRequest req, CustomHttpResponse res) {
+        Map<String, Object> body = req.getJsonBody();
+        try {
+            userService.createUserWithException(body); // 여기로 가면 서비스 로직이 있는데, 여기서 아예 등록을 한 후 에러를 내버리자.
+            res.setStatus(HttpStatus.CREATED);
+            res.setBody("User created");
+        } catch (RuntimeException e) {  // UserServiceImpl 에서 fail 이란 id 를 넣어서 예외가 발생하고
+            res.setStatus(HttpStatus.INTERNAL_SERVER_ERROR); // 500 과 함꼐
+            res.setBody("예외 발생 → 트랜잭션 롤백됨: " + e.getMessage()); // 이게 출력됨. 근데 이게 나왔다고 롤백이 된건 아니고...
+        }
+    }
+
+    private void getAllUsers(CustomHttpRequest req, CustomHttpResponse res) throws Exception {
+        String nameFilter = req.getQueryParams().get("q");
+        String ageFilter = req.getQueryParams().get("age");
+        var result = userService.getAllUsers(nameFilter, ageFilter);
+        res.setStatus(HttpStatus.OK);
+        res.setHeader("Content-Type", "application/json");
+        res.setBody(objectMapper.writeValueAsString(result));
+    }
+
+    private void getUserById(String id, CustomHttpResponse res) throws Exception {
+        var user = userService.getUserById(id);
+        if (user == null) {
+            res.setStatus(HttpStatus.NOT_FOUND);
+            res.setBody("User not found");
+            return;
+        }
+        res.setStatus(HttpStatus.OK);
+        res.setHeader("Content-Type", "application/json");
+        res.setBody(objectMapper.writeValueAsString(user));
+    }
+
+    private void updateUser(String id, CustomHttpRequest req, CustomHttpResponse res) {
+        try {
+            userService.updateUser(id, req.getJsonBody());
+            res.setStatus(HttpStatus.OK);
+            res.setBody("User updated");
+        } catch (NoSuchElementException e) {
+            res.setStatus(HttpStatus.NOT_FOUND);
+            res.setBody(e.getMessage());
+        } catch (IllegalArgumentException e) {
+            res.setStatus(HttpStatus.BAD_REQUEST);
+            res.setBody(e.getMessage());
+        }
+    }
+
+    private void patchUser(String id, CustomHttpRequest req, CustomHttpResponse res) {
+        try {
+            userService.patchUser(id, req.getJsonBody());
+            res.setStatus(HttpStatus.OK);
+            res.setBody("User partially updated");
+        } catch (NoSuchElementException e) {
+            res.setStatus(HttpStatus.NOT_FOUND);
+            res.setBody(e.getMessage());
+        }
+    }
+
+    private void deleteUserById(String id, CustomHttpResponse res) {
+        try {
+            userService.deleteUser(id);
+            res.setStatus(HttpStatus.OK);
+            res.setBody("User deleted");
+        } catch (NoSuchElementException e) {
+            res.setStatus(HttpStatus.NOT_FOUND);
+            res.setBody(e.getMessage());
+        }
+    }
+
+    private void deleteAllUsers(CustomHttpResponse res) {
+        userService.deleteAllUsers();
+        res.setStatus(HttpStatus.OK);
+        res.setBody("All users deleted");
     }
 
     private void handleLogin(CustomHttpRequest req, CustomHttpResponse res) throws Exception {
         Map<String, Object> body = req.getJsonBody();
         String id = (String) body.get("id");
 
-        Session session = req.getSession();
-
-        if (id == null || !userDb.containsKey(id)) {
+        if (id == null || !userService.login(id)) {
             res.setStatus(HttpStatus.UNAUTHORIZED);
             res.setBody("Invalid login ID");
             return;
         }
 
+        Session session = req.getSession();
         session.setAttribute("user", id);
+
         res.setStatus(HttpStatus.OK);
         res.setBody("Login successful");
-    }
-
-    private void getAllUsers(CustomHttpRequest req, CustomHttpResponse res) throws Exception {
-        String q = req.getQueryParams().get("q");
-        String ageFilter = req.getQueryParams().get("age");
-
-        System.out.println("DEBUG: query q = " + q);
-
-        var result = userDb.values().stream()
-                .filter(user -> q == null || user.get("name").toString().equals(q))
-                .filter(user -> ageFilter == null || user.get("age").toString().equals(ageFilter))
-                .toList();
-
-        String json = objectMapper.writeValueAsString(result);
-        res.setStatus(HttpStatus.OK);
-        res.setHeader("Content-Type", "application/json");
-        res.setBody(json);
-    }
-
-    private void getUserById(String id, CustomHttpResponse res) throws Exception {
-        if(!userDb.containsKey(id)) {
-            res.setStatus(HttpStatus.NOT_FOUND);
-            res.setBody("User not found" + id);
-            return;
-        }
-        String json = objectMapper.writeValueAsString(userDb.get(id));
-        res.setStatus(HttpStatus.OK);
-        res.setHeader("Content-Type", "application/json");
-        res.setBody(json);
-    }
-
-    private void createUser(CustomHttpRequest req, CustomHttpResponse res){
-        Map<String, Object> body = req.getJsonBody();
-        String id = (String) body.get("id");
-
-        if (id == null || body.get("name") == null || body.get("age") == null) {
-            res.setStatus(HttpStatus.BAD_REQUEST);
-            res.setBody("Missing fields: id, name, age");
-            return;
-        }
-
-        if (userDb.containsKey(id)) {
-            res.setStatus(HttpStatus.CONFLICT);
-            res.setBody("User already exists");
-            return;
-        }
-
-        userDb.put(id, body);
-        res.setStatus(HttpStatus.CREATED);
-        res.setBody("User created");
-    }
-
-    private void updateUser(String id, CustomHttpRequest req, CustomHttpResponse res) {
-        if (id == null || !userDb.containsKey(id)) {
-            res.setStatus(HttpStatus.NOT_FOUND);
-            res.setBody("User not found");
-            return;
-        }
-
-        Map<String, Object> body = req.getJsonBody();
-        if (body.get("name") == null || body.get("age") == null) {
-            res.setStatus(HttpStatus.BAD_REQUEST);
-            res.setBody("Missing fields: name, age");
-            return;
-        }
-
-        body.put("id", id); // URI 기준 ID 강제 고정
-        userDb.put(id, body);
-        res.setStatus(HttpStatus.OK);
-        res.setBody("User updated");
-    }
-
-    private void patchUser(String id, CustomHttpRequest req, CustomHttpResponse res) {
-        if (id == null || !userDb.containsKey(id)) {
-            res.setStatus(HttpStatus.NOT_FOUND);
-            res.setBody("User not found");
-            return;
-        }
-
-        Map<String, Object> user = userDb.get(id);
-        Map<String, Object> body = req.getJsonBody();
-        body.forEach((key, value) -> {
-            if (!"id".equals(key)) {
-                user.put(key, value);
-            }
-        });
-
-        res.setStatus(HttpStatus.OK);
-        res.setBody("User partially updated");
-    }
-
-    private void deleteAllUsers(CustomHttpResponse res) {
-        userDb.clear();
-        res.setStatus(HttpStatus.OK);
-        res.setBody("All users deleted");
-    }
-
-    private void deleteUserById(String id, CustomHttpResponse res) {
-        if (!userDb.containsKey(id)) {
-            res.setStatus(HttpStatus.NOT_FOUND);
-            res.setBody("User not found");
-            return;
-        }
-
-        userDb.remove(id);
-        res.setStatus(HttpStatus.OK);
-        res.setBody("User deleted");
     }
 
     public void init() {
