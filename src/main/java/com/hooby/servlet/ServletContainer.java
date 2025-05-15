@@ -34,6 +34,7 @@ public class ServletContainer {
     }
 
     public CustomHttpResponse dispatch(CustomHttpRequest request) {
+        // Refactor: 이게 사실 DispatcherServlet의 역할인데, 리팩터링을 하는게 낫지 않을까?
         CustomHttpResponse response = new CustomHttpResponse();
 
         ServletMapper.MappingResult result = servletMapper.map(request.getPath());
