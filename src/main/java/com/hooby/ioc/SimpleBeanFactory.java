@@ -20,7 +20,7 @@ public class SimpleBeanFactory implements BeanFactory {
 
     @Override
     public Object getBean(String id) {
-        if (singletonObjects.containsKey(id)) return singletonObjects.get(id);
+        if (singletonObjects.containsKey(id)) return singletonObjects.get(id); // 싱글톤 객체에 있으면 그냥 싱글벙글 쓰면 된다.
         BeanDefinition def = beanDefinitionMap.get(id);
         if (def == null) throw new RuntimeException("❌ 등록되지 않은 빈입니다: " + id);
 
@@ -34,10 +34,10 @@ public class SimpleBeanFactory implements BeanFactory {
 
             // AOP Proxy 적용
             for (BeanPostProcessor processor : postProcessors) {
-                instance = processor.postProcess(instance); // AOP Proxy 로 Wrapping
+                instance = processor.postProcessAfterInitialization(instance);
             }
 
-            singletonObjects.put(id, instance);
+            singletonObjects.put(id, instance); // 싱글톤에 덮어씀 (원래 내부 로직을 분리를 할까도 했는데...)
             return instance;
 
         } catch (Exception e) {

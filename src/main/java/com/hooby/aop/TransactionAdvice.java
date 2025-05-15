@@ -1,10 +1,8 @@
 package com.hooby.aop;
 
 import com.hooby.tx.TransactionManager;
-import java.lang.reflect.Method;
 
 public class TransactionAdvice implements AopAdvice {
-
     private final TransactionManager txManager;
 
     public TransactionAdvice(TransactionManager txManager) {
@@ -12,10 +10,10 @@ public class TransactionAdvice implements AopAdvice {
     }
 
     @Override
-    public Object invoke(Method method, Object[] args, Object target) throws Throwable {
+    public Object invoke(MethodInvocation invocation) throws Throwable {
         txManager.begin();
         try {
-            Object result = method.invoke(target, args);
+            Object result = invocation.proceed();
             txManager.commit();
             return result;
         } catch (Throwable t) {

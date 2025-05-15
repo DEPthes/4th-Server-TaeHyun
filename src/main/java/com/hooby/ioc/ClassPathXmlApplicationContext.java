@@ -3,9 +3,9 @@ package com.hooby.ioc;
 public class ClassPathXmlApplicationContext extends SimpleBeanFactory implements ApplicationContext {
 
     public ClassPathXmlApplicationContext(String... xmlPaths) {
-        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(this);
+        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(this); // 팩토리를 넣어서
         for (String path : xmlPaths) {
-            reader.loadBeanDefinitions(path);
+            reader.loadBeanDefinitions(path); // 빈 생성하고 내부로직에서 팩토리에 빈 등록
         }
     }
 
