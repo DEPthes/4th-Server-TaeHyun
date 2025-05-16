@@ -34,7 +34,7 @@ public class SimpleBeanFactory implements BeanFactory {
 
             // AOP Proxy 적용
             for (BeanPostProcessor processor : postProcessors) {
-                instance = processor.postProcessAfterInitialization(instance);
+                instance = processor.postProcess(instance);
             }
 
             singletonObjects.put(id, instance); // 싱글톤에 덮어씀 (원래 내부 로직을 분리를 할까도 했는데...)

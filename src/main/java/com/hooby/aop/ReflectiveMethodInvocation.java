@@ -34,8 +34,8 @@ public class ReflectiveMethodInvocation implements MethodInvocation {
 
     @Override
     public Object proceed() throws Throwable {
-        if (++currentAdviceIndex == adviceChain.size()) {
-            return method.invoke(target, args); // 실제 대상 호출
+        if (++currentAdviceIndex == adviceChain.size()) { // 어드바이스 다 돌려
+            return method.invoke(target, args); // 실제 비즈니스 로직 메서드 호출
         }
         return adviceChain.get(currentAdviceIndex).invoke(this); // 다음 advice 실행
     }

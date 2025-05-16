@@ -44,11 +44,10 @@ public class Main {
             ServletContainer container = (ServletContainer) context.getBean("servletContainer");
             CustomHttpServer server = new CustomHttpServer(8080, container);
 
-            System.out.println("🟢 HTTP 서버가 8080 포트에서 시작되었습니다.");
             server.run();
 
             Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-                logger.info("🟡 Shutdown Hook 실행 중...");
+                logger.info("Shutdown Hook 실행 중...");
                 context.close();
             }));
 

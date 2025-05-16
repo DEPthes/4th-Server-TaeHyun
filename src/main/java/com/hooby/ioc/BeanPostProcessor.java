@@ -13,28 +13,19 @@ public class BeanPostProcessor {
         advisors.add(advisor);
     }
 
-    public Object postProcessBeforeInitialization(Object bean) {
-        return bean;
-    }
-
-    public Object postProcessAfterInitialization(Object bean) {
-        Class<?> targetClass = bean.getClass();
+    // 빈 초기화 완료 직후
+    public Object postProcess(Object bean) {
+        Class<?> targetClass = bean.getClass(); // 타겟 클래스 잡고
 
         List<AopAdvice> matchedAdvices = new ArrayList<>();
         for (Advisor advisor : advisors) {
-            if (advisor.getPointcut().matchesAnyMethodOf(targetClass)) {
-                matchedAdvices.add(advisor.getAdvice());
+            if (advisor.getPointcut().matchesAnyMethodOf(targetClass)) { // Pointcut 매칭해서
+                matchedAdvices.add(advisor.getAdvice()); // 모아줌
             }
         }
 
-        if (matchedAdvices.isEmpty()) return bean;
+        if (matchedAdvices.isEmpty()) return bean; // 없으면 그냥 그대로 빈 반환하는거고
 
-        // 🔄 프록시 생성 책임을 ProxyFactory 로 위임
-        return ProxyFactory.createProxy(bean, matchedAdvices);
-    }
-
-    // 이 메서드를 통해 외부에서 Advisor 목록을 설정 가능
-    public List<Advisor> getAdvisors() {
-        return advisors;
+        return ProxyFactory.createProxy(bean, matchedAdvices); // 프록시로 내보내서 생성하고 그걸 반환한다.
     }
 }
