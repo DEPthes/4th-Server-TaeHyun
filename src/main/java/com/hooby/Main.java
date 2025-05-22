@@ -21,8 +21,7 @@ public class Main {
             new Thread(new SystemResourceMonitor()).start();
 
             // ApplicationContext 초기화
-//            ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-             ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+            ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
             // AOP 프록시 설정
             BeanPostProcessor processor = new BeanPostProcessor();

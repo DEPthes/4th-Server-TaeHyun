@@ -1,6 +1,6 @@
 package com.hooby.http;
 
-import com.hooby.parser.HttpRequestParser;
+import com.hooby.http.parser.HttpRequestParser;
 import com.hooby.servlet.ServletContainer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
