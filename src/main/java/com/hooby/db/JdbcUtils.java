@@ -26,7 +26,7 @@ public class JdbcUtils {
             String sql = Files.readString(Paths.get("src/main/resources/schema.sql"), StandardCharsets.UTF_8);
             stmt.execute(sql);
             conn.commit();
-            System.out.println("🗂️  schema.sql 실행 완료");
+            System.out.println("✔︎ schema.sql 실행 완료");
         } catch (Exception e) {
             throw new RuntimeException("❌ schema.sql 실행 실패", e);
         }
