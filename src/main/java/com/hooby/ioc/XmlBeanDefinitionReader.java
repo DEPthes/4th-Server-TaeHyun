@@ -173,9 +173,17 @@ public class XmlBeanDefinitionReader {
             try {
                 if ("bean".equals(item.getTagName())) {
                     String clazzName = item.getAttribute("class");
-                    Class<?> clazz = Class.forName(clazzName);
-                    Object obj = clazz.getDeclaredConstructor().newInstance();
-                    items.add(obj);
+                    try {
+                        Class<?> clazz = Class.forName(clazzName);
+                        Object obj = clazz.getDeclaredConstructor().newInstance();
+                        items.add(obj);
+                    } catch (ClassNotFoundException e) {
+                        System.err.println("❌ 클래스 없음: " + clazzName);
+                    } catch (NoSuchMethodException e) {
+                        System.err.println("❌ 기본 생성자 없음: " + clazzName);
+                    } catch (Exception e) {
+                        System.err.println("❌ bean 생성 실패: " + clazzName + " → " + e.getMessage());
+                    }
                 } else if ("ref".equals(item.getTagName())) {
                     items.add(item.getAttribute("bean"));
                 }

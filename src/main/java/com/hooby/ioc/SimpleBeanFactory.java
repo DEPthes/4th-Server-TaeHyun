@@ -26,7 +26,12 @@ public class SimpleBeanFactory implements BeanFactory {
 
         try {
             Class<?> clazz = Class.forName(def.getClassName()); // 내부적으로 Class Loader 를 사용해서 동적 클래스를 로딩한다.
-            logger.debug("✅ 클래스 로딩: {}", clazz.getName());
+            try {
+                clazz = Class.forName(def.getClassName());
+                logger.debug("✅ 클래스 로딩: {}", clazz.getName());
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException("❌ 클래스를 찾을 수 없습니다: " + def.getClassName(), e);
+            }
 
             Object instance = createInstance(clazz, def);
             injectProperties(clazz, instance, def);
@@ -48,7 +53,11 @@ public class SimpleBeanFactory implements BeanFactory {
     private Object createInstance(Class<?> clazz, BeanDefinition def) throws Exception {
         /* Default Constructor Case */
         if (def.getConstructorArgs().isEmpty()) {
-            return clazz.getDeclaredConstructor().newInstance();
+            try {
+                return clazz.getDeclaredConstructor().newInstance();
+            } catch (NoSuchMethodException e) {
+                throw new RuntimeException("❌ 기본 생성자가 없습니다: " + clazz.getName(), e);
+            }
         }
 
         /* Parameterized Constructor (DI Target) */
@@ -64,9 +73,13 @@ public class SimpleBeanFactory implements BeanFactory {
         if (ctor == null) throw new RuntimeException("❌ 적절한 생성자를 찾을 수 없습니다: " + def.getId());
 
         logger.debug("✅ 선택된 생성자: {}", ctor);
-        Object instance = ctor.newInstance(args.toArray()); // Create Instance with args (∵ Parameterized Constructor)
-        logger.debug("✅ 인스턴스 생성 완료: {}", clazz.getName());
-        return instance;
+        try {
+            Object instance = ctor.newInstance(args.toArray());
+            logger.debug("✅ 인스턴스 생성 완료: {}", clazz.getName());
+            return instance;
+        } catch (Exception e) {
+            throw new RuntimeException("❌ 생성자 인스턴스화 실패: " + clazz.getName(), e);
+        }
     }
 
     private Constructor<?> selectMatchingConstructor(Class<?> clazz, List<Object> args) {
@@ -110,15 +123,26 @@ public class SimpleBeanFactory implements BeanFactory {
 
             if (setter == null) throw new RuntimeException("❌ setter 메서드를 찾을 수 없습니다: " + setterName);
             logger.debug("✅ setter 주입: {} → {}", setter.getName(), value.getClass().getName());
-            setter.invoke(instance, value); // run setter method dynamically
+
+            try {
+                setter.invoke(instance, value);
+            } catch (Exception e) {
+                throw new RuntimeException("❌ setter 호출 실패: " + setterName + " → " + e.getMessage(), e);
+            }
         }
     }
 
     private void invokeInitMethod(Class<?> clazz, Object instance, BeanDefinition def) throws Exception {
         if (def.getInitMethod() != null) { // If InitMethod is Exist
-            Method init = clazz.getMethod(def.getInitMethod()); // retrieve init method
-            logger.debug("✅ init-method 실행: {}", init.getName());
-            init.invoke(instance); // run init method dynamically for managing life cycle
+            try {
+                Method init = clazz.getMethod(def.getInitMethod());
+                logger.debug("✅ init-method 실행: {}", init.getName());
+                init.invoke(instance); 
+            } catch (NoSuchMethodException e) {
+                throw new RuntimeException("❌ init-method가 존재하지 않습니다: " + def.getInitMethod(), e);
+            } catch (Exception e) {
+                throw new RuntimeException("❌ init-method 실행 실패: " + def.getInitMethod(), e);
+            }
         }
     }
 
