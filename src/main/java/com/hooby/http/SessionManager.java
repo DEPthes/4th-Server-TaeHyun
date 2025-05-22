@@ -1,6 +1,9 @@
 package com.hooby.http;
 
+import com.hooby.filter.SessionFilter;
 import com.hooby.listener.ListenerManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -8,6 +11,7 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SessionManager {
+    private static final Logger logger = LoggerFactory.getLogger(SessionManager.class);
     private final Map<String, Session> sessionStore = new ConcurrentHashMap<>();
     private final String COOKIE_NAME = "JSESSIONID";
 
@@ -15,7 +19,7 @@ public class SessionManager {
 
     public SessionManager(ListenerManager listenerManager) {
         this.listenerManager = listenerManager;
-        System.out.println("🧩 생성자 주입됨: " + listenerManager.getClass().getSimpleName());
+        logger.info("🧩 생성자 주입됨: {}", listenerManager.getClass().getSimpleName());
     }
 
     public Session getOrCreateSession(CustomHttpRequest request, CustomHttpResponse response) {

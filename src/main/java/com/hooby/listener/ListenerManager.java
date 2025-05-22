@@ -1,11 +1,15 @@
 package com.hooby.listener;
 
 import com.hooby.http.Session;
+import com.hooby.servlet.DispatcherServlet;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListenerManager {
+    private static final Logger logger = LoggerFactory.getLogger(ListenerManager.class);
     private final List<ServerListener> serverListeners;
     private final List<SessionListener> sessionListeners;
 
@@ -13,8 +17,7 @@ public class ListenerManager {
         this.serverListeners = serverListeners;
         this.sessionListeners = sessionListeners;
 
-        System.out.println("🧩 생성자 주입됨: ServerListeners=" + serverListeners.size()
-                + ", SessionListeners=" + sessionListeners.size());
+        logger.info("🧩 생성자 주입됨: ServerListeners={}, SessionListeners={}", serverListeners.size(), sessionListeners.size());
 
         sessionListeners.forEach(l -> System.out.println("   - SessionListener: " + l.getClass().getSimpleName()));
     }

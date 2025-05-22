@@ -1,11 +1,15 @@
 package com.hooby.servlet;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
 public class ServletInitializer {
+    private static final Logger logger = LoggerFactory.getLogger(ServletInitializer.class);
     private final Map<String, Supplier<Servlet>> servletFactories = new HashMap<>();
     private final Map<String, Servlet> servletCache = new HashMap<>();
 
@@ -16,8 +20,7 @@ public class ServletInitializer {
             String key = Character.toLowerCase(className.charAt(0)) + className.substring(1); // ex: "UserServlet" → "userServlet"
             servletFactories.put(key, () -> servlet);
         }
-        System.out.println("🧩 생성자 주입됨: " + servletFactories.keySet());
-
+        logger.info("🧩 생성자 주입됨: {}", servletFactories.keySet());
     }
 
     public Servlet getOrCreate(String servletName) {

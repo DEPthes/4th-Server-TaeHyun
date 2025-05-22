@@ -3,13 +3,16 @@ package com.hooby.filter;
 import com.hooby.http.CustomHttpRequest;
 import com.hooby.http.CustomHttpResponse;
 import com.hooby.http.SessionManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SessionFilter implements Filter {
+    private static final Logger logger = LoggerFactory.getLogger(SessionFilter.class);
     private final SessionManager sessionManager;
 
     public SessionFilter(SessionManager sessionManager) {
         this.sessionManager = sessionManager;
-        System.out.println("🧩 생성자 주입됨: SessionManager into SessionFilter");
+        logger.info("🧩 생성자 주입됨: SessionManager into SessionFilter");
     }
 
     @Override

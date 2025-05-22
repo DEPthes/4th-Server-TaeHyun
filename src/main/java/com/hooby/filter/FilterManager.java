@@ -1,12 +1,18 @@
 package com.hooby.filter;
 
+import com.hooby.servlet.ServletInitializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.List;
 
 public class FilterManager {
     private final List<Filter> filters;
+    private static final Logger logger = LoggerFactory.getLogger(FilterManager.class);
+
 
     public FilterManager(List<Filter> filters) {
-        System.out.println("🧩 생성자 주입됨: " + filters);
+        logger.info("🧩 생성자 주입됨: {}", filters);
         this.filters = filters;
     }
 
