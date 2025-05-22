@@ -12,7 +12,7 @@ public class SimpleBeanFactory implements BeanFactory {
     protected final Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();
     protected final Map<String, Object> singletonObjects = new HashMap<>();
     private static final Logger logger = LoggerFactory.getLogger(SimpleBeanFactory.class);
-    private final List<BeanPostProcessor> postProcessors = new ArrayList<>();
+    protected final List<BeanPostProcessor> postProcessors = new ArrayList<>();
 
     public void registerBeanDefinition(BeanDefinition def) {
         beanDefinitionMap.put(def.getId(), def);
@@ -151,6 +151,7 @@ public class SimpleBeanFactory implements BeanFactory {
         }
     }
 
+    @Override
     public void addPostProcessor(BeanPostProcessor processor) {
         postProcessors.add(processor);
     }

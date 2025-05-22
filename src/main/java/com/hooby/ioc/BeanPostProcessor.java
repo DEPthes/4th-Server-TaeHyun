@@ -1,4 +1,3 @@
-// Path: com.hooby.ioc.BeanPostProcessor.java
 package com.hooby.ioc;
 
 import com.hooby.aop.*;

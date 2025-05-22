@@ -18,4 +18,7 @@ public class ClassPathXmlApplicationContext extends SimpleBeanFactory implements
     public void close() {
         super.close(); // 역시 위임 가능
     }
+
+    @Override
+    public void addPostProcessor(BeanPostProcessor processor) { super.addPostProcessor(processor); }
 }
