@@ -25,6 +25,9 @@ dependencies {
 
     // H2
     implementation 'com.h2database:h2:2.2.224'
+
+    // OSHI: 시스템 CPU, RAM 사용량 모니터링 라이브러리
+    implementation 'com.github.oshi:oshi-core:6.4.0'
 }
 
 test {
