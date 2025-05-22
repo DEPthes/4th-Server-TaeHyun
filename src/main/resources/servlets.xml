@@ -16,7 +16,6 @@
         <constructor-arg>
             <list>
                 <ref bean="userServlet"/>
-                <ref bean="testServlet"/>
                 <ref bean="orderServlet"/>
                 <ref bean="paymentServlet"/>
             </list>
@@ -32,8 +31,6 @@
                 <entry key="/login" value="userServlet"/>
                 <entry key="/orders" value="orderServlet"/>
                 <entry key="/payments" value="paymentServlet"/>
-                <entry key="/test" value="testServlet"/>
-                <entry key="/test/fail" value="testServlet"/>
             </map>
         </constructor-arg>
     </bean>
