@@ -37,14 +37,14 @@ public class TcpSocketClient {
             // 연결된 클라이언트 객체의 정보를 띄워줌
             logger.info("🟢 Client connected: {}", clientSocket.getInetAddress());
 
-            System.out.print("🟢 Input lowercase message: ");
+            logger.info("🟢 Input lowercase message: ");
             String message = userInput.readLine();
 
             // Network Layer 에서는 Byte Stream 으로 데이터를 보내기에, Byte 로 바꿔서 보내준다.
             outToServer.writeBytes(message + '\n');
 
             String modifiedSentence = inFromServer.readLine();
-            System.out.println("🟢 From Server: " + modifiedSentence);
+            logger.info("🟢 From Server: {}", modifiedSentence);
 
         } catch (IOException e){
             logger.error("⚠️ IO 에러가 발생했습니다.", e);

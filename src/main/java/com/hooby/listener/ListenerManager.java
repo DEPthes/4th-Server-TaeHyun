@@ -19,16 +19,16 @@ public class ListenerManager {
 
         logger.info("🧩 생성자 주입됨: ServerListeners={}, SessionListeners={}", serverListeners.size(), sessionListeners.size());
 
-        sessionListeners.forEach(l -> System.out.println("   - SessionListener: " + l.getClass().getSimpleName()));
+        sessionListeners.forEach(l -> logger.info("   - SessionListener: {}", l.getClass().getSimpleName()));
     }
 
     public void notifyInit() {
-        System.out.println("🟢 ListenerManager 초기화됨");
+        logger.info("🟢 ListenerManager 초기화됨");
         serverListeners.forEach(ServerListener::onInit);
     }
 
     public void notifyDestroy() {
-        System.out.println("🔴 ListenerManager 종료됨");
+        logger.info("🔴 ListenerManager 종료됨");
         serverListeners.forEach(ServerListener::onDestroy);
     }
 

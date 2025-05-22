@@ -3,12 +3,14 @@ package com.hooby.servlet;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hooby.http.*;
 import com.hooby.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 import java.util.NoSuchElementException;
 
 public class UserServlet implements Servlet {
-
+    private static final Logger logger = LoggerFactory.getLogger(UserServlet.class);
     private final ObjectMapper objectMapper = new ObjectMapper();
     private UserService userService;
 
@@ -162,10 +164,10 @@ public class UserServlet implements Servlet {
     }
 
     public void init() {
-        System.out.println("🟢 UserServlet 초기화됨");
+        logger.info("🟢 UserServlet 초기화됨");
     }
 
     public void cleanup() {
-        System.out.println("🔴 UserServlet 자원 해제됨");
+        logger.info("🔴 UserServlet 자원 해제됨");
     }
 }

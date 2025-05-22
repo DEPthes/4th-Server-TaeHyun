@@ -21,14 +21,14 @@ public class FilterManager {
     }
 
     public void init() {
-        System.out.println("🟢 FilterManager 초기화됨");
+        logger.info("🟢 FilterManager 초기화됨");
         for (Filter f : filters) {
             f.init();
         }
     }
 
     public void destroy() {
-        System.out.println("🔴 FilterManager 종료됨");
+        logger.info("🔴 FilterManager 종료됨");
         for (Filter f : filters) {
             f.destroy();
         }

@@ -13,8 +13,4 @@
           init-method="init"
           destroy-method="cleanup" />
 
-    <bean id="testServlet"
-          class="com.hooby.servlet.TestServlet"
-          init-method="init"
-          destroy-method="cleanup" />
 </beans>

@@ -2,11 +2,12 @@ package com.hooby.servlet;
 
 import com.hooby.http.*;
 import com.hooby.service.PaymentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PaymentServlet implements Servlet {
-
+    private static final Logger logger = LoggerFactory.getLogger(PaymentServlet.class);
     private PaymentService paymentService;
-
     public void setPaymentService(PaymentService paymentService) {
         this.paymentService = paymentService;
     }
@@ -22,10 +23,8 @@ public class PaymentServlet implements Servlet {
     }
 
     public void init() {
-        System.out.println("🟢 PaymentServlet 초기화됨");
+        logger.info("🟢 PaymentServlet 초기화됨");
     }
 
-    public void cleanup() {
-        System.out.println("🔴 PaymentServlet 자원 해제됨");
-    }
+    public void cleanup() { logger.info("🔴 PaymentServlet 자원 해제됨"); }
 }

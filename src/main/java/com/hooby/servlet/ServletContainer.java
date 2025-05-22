@@ -25,12 +25,12 @@ public class ServletContainer {
     }
 
     public void init() {
-        System.out.println("🟢 ServletContainer 초기화됨");
+        logger.info("🟢 ServletContainer 초기화됨");
         listenerManager.notifyInit();
     }
 
     public void cleanup() {
-        System.out.println("🔴 ServletContainer 종료됨");
+        logger.info("🔴 ServletContainer 종료됨");
         listenerManager.notifyDestroy();
     }
 }

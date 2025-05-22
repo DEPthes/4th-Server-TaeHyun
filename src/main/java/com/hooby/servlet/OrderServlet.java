@@ -3,13 +3,14 @@ package com.hooby.servlet;
 import com.hooby.http.*;
 import com.hooby.service.
         OrderService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
 public class OrderServlet implements Servlet {
-
+    private static final Logger logger = LoggerFactory.getLogger(OrderServlet.class);
     private OrderService orderService;
-
     public void setOrderService(OrderService orderService) {
         this.orderService = orderService;
     }
@@ -23,10 +24,8 @@ public class OrderServlet implements Servlet {
     }
 
     public void init() {
-        System.out.println("🟢 OrderServlet 초기화됨");
+        logger.info("🟢 OrderServlet 초기화됨");
     }
 
-    public void cleanup() {
-        System.out.println("🔴 OrderServlet 자원 해제됨");
-    }
+    public void cleanup() { logger.info("🔴 OrderServlet 자원 해제됨"); }
 }

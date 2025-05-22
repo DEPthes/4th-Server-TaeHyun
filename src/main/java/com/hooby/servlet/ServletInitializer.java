@@ -32,9 +32,9 @@ public class ServletInitializer {
     }
 
     public void init() {
-        System.out.println("🟢 ServletInitializer 초기화됨");
+        logger.info("🟢 ServletInitializer 초기화됨");
     }
     public void cleanup() {
-        System.out.println("🔴 ServletInitializer 종료됨");
+        logger.info("🔴 ServletInitializer 종료됨");
     }
 }

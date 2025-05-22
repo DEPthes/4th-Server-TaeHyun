@@ -1,11 +1,15 @@
 package com.hooby.filter;
 
+import com.hooby.aop.LoggingAdvice;
 import com.hooby.http.CustomHttpRequest;
 import com.hooby.http.CustomHttpResponse;
 import com.hooby.http.HttpStatus;
 import com.hooby.http.Session;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class AuthFilter implements Filter {
+    private static final Logger logger = LoggerFactory.getLogger(AuthFilter.class);
     @Override
     public void doFilter(CustomHttpRequest request, CustomHttpResponse response, FilterChain chain) {
         String path = request.getPath();
@@ -22,11 +26,11 @@ public class AuthFilter implements Filter {
         if (user == null) {
             response.setStatus(HttpStatus.UNAUTHORIZED);
             response.setBody("🟠 Unauthorized: 로그인 필요");
-            System.out.println("🔴 AuthFilter: 비로그인 요청 차단됨");
+            logger.error("🔴 AuthFilter: 비로그인 요청 차단됨");
             return;
         }
 
-        System.out.println("✅ AuthFilter: 로그인 사용자 통과 → " + user);
+        logger.info("✅ AuthFilter: 로그인 사용자 통과 → " + user);
         chain.doFilter(request, response);
     }
 

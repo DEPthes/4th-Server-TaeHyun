@@ -145,7 +145,7 @@ public class SimpleBeanFactory implements BeanFactory {
                     Method destroy = entry.getValue().getClass().getMethod(def.getDestroyMethod());
                     destroy.invoke(entry.getValue()); // run destroy method for managing lifecycle
                 } catch (Exception e) {
-                    System.err.println("❌ destroy-method 실행 실패: " + def.getId());
+                    logger.error("❌ destroy-method 실행 실패: {}", def.getId());
                 }
             }
         }

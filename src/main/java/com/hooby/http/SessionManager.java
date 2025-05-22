@@ -45,7 +45,7 @@ public class SessionManager {
         sessionStore.put(newId, session);
         request.setSession(session);
 
-        System.out.println("Session created: " + newId + " | Thread: " + Thread.currentThread().getName());
+        logger.info("Session created: " + newId + " | Thread: " + Thread.currentThread().getName());
         response.setHeader("Set-Cookie", COOKIE_NAME + "=" + newId + "; Path=/; HttpOnly");
 
         listenerManager.notifySessionCreated(session);
@@ -82,7 +82,7 @@ public class SessionManager {
     }
 
     public void clearAll() {
-        System.out.println("🔴 SessionManager 모든 세션 초기화");
+        logger.info("🔴 SessionManager 모든 세션 초기화");
         for (Session s : sessionStore.values()) {
             listenerManager.notifySessionDestroyed(s);
         }

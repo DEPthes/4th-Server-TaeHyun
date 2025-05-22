@@ -3,8 +3,6 @@
         <property name="userService" ref="userService"/>
     </bean>
 
-    <bean id="testServlet" class="com.hooby.servlet.TestServlet" init-method="init" destroy-method="cleanup"/>
-
     <bean id="orderServlet" class="com.hooby.servlet.OrderServlet" init-method="init" destroy-method="cleanup">
         <property name="orderService" ref="orderService"/>
     </bean>
