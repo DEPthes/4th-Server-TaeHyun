@@ -30,17 +30,11 @@ public class Main {
             // pointcut -> confirm join point
             ExecutionPointcut pointcut = ExecutionPointcutParser.parse(
                     "execution(* com.hooby.service.UserServiceImpl.*(..))"
-//                    "execution(* *.*ServiceImpl.*(..))"
             );
 
-            // 트랜잭션 Advice
-            processor.addAdvisor(new Advisor(pointcut, new TransactionAdvice(txManager)));
-
-            // 로깅 Advice
-            processor.addAdvisor(new Advisor(pointcut, new LoggingAdvice()));
-
-            // PostProcessor 등록
-            context.addPostProcessor(processor);
+            processor.addAdvisor(new Advisor(pointcut, new TransactionAdvice(txManager))); // 트랜잭션 Advice
+            processor.addAdvisor(new Advisor(pointcut, new LoggingAdvice())); // 로깅 Advice
+            context.addPostProcessor(processor); // PostProcessor 등록
 
             // 서블릿 컨테이너 초기화
             ServletContainer container = (ServletContainer) context.getBean("servletContainer");

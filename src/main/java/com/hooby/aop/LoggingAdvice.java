@@ -14,8 +14,9 @@ public class LoggingAdvice implements AopAdvice {
             logger.info("[AOP] After method: {}", invocation.getMethod().getName());
             return result;
         } catch (Throwable t) {
-            logger.error("❗ Exception in method: {}", invocation.getMethod().getName());
-            throw t;
+            Throwable root = (t.getCause() != null) ? t.getCause() : t;
+            logger.error("Exception in method: {}, reason: {}", invocation.getMethod().getName(), root.getMessage());
+            throw root;
         }
     }
 }

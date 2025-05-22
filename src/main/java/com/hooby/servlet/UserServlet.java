@@ -78,8 +78,9 @@ public class UserServlet implements Servlet {
             res.setStatus(HttpStatus.CREATED);
             res.setBody("User created");
         } catch (RuntimeException e) {  // UserServiceImpl 에서 fail 이란 id 를 넣어서 예외가 발생하고
-            res.setStatus(HttpStatus.INTERNAL_SERVER_ERROR); // 500 과 함꼐
-            res.setBody("예외 발생 → 트랜잭션 롤백됨: " + e.getMessage()); // 이게 출력됨. 근데 이게 나왔다고 롤백이 된건 아니고...
+            res.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+            res.setBody("예외 발생 → 트랜잭션 롤백됨: " +
+                    (e.getMessage() != null ? e.getMessage() : "원인 불명"));
         }
     }
 
