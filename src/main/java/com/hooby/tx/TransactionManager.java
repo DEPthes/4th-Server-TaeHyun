@@ -43,14 +43,12 @@ public class TransactionManager {
 
     public void close() {
         Connection conn = connectionHolder.get();
-        if (conn != null) {
-            try {
-                conn.close();
-            } catch (Exception e) {
-                throw new RuntimeException("🔴 커넥션 닫기 실패", e);
-            } finally {
-                connectionHolder.remove();
-            }
+        try {
+            if (conn != null) conn.close();
+        } catch (Exception e) {
+            throw new RuntimeException("🔴 커넥션 닫기 실패", e);
+        } finally {
+            connectionHolder.remove();
         }
     }
 

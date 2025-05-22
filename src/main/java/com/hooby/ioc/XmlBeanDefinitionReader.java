@@ -75,29 +75,33 @@ public class XmlBeanDefinitionReader {
     private void parseConstructorArgs(Element beanElem, BeanDefinition def) throws Exception {
         NodeList ctorArgs = beanElem.getElementsByTagName("constructor-arg"); // Identify(?) Constructor DI tag
         for (int j = 0; j < ctorArgs.getLength(); j++) { // args 가 되는 dependencies 들을 ctorArgs 로 지정
-            Element arg = (Element) ctorArgs.item(j); // export each a dependency || map, list
+            try {
+                Element arg = (Element) ctorArgs.item(j); // export each a dependency || map, list
 
-            /* Dependency Injection Logic Automatically (일단 논리적 구조는 만들어야 자동으로 만들던가 함) */
+                /* Dependency Injection Logic Automatically (일단 논리적 구조는 만들어야 자동으로 만들던가 함) */
 
-            // <map>
-            NodeList mapTags = arg.getElementsByTagName("map"); // Map Case (참조 : servletMapper.xml)
-            if (mapTags.getLength() > 0) {
-                Map<String, String> map = parseMap((Element) mapTags.item(0));
-                def.addConstructorArg(map);
-                continue;
-            }
+                // <map>
+                NodeList mapTags = arg.getElementsByTagName("map"); // Map Case (참조 : servletMapper.xml)
+                if (mapTags.getLength() > 0) {
+                    Map<String, String> map = parseMap((Element) mapTags.item(0));
+                    def.addConstructorArg(map);
+                    continue;
+                }
 
-            // <list>
-            NodeList listTags = arg.getElementsByTagName("list"); // 참조 (그냥 아무 거나 xml 드가도 이 경우 있을 듯)
-            if (listTags.getLength() > 0) {
-                List<Object> list = parseList((Element) listTags.item(0));
-                def.addConstructorArg(list);
-                continue;
-            }
+                // <list>
+                NodeList listTags = arg.getElementsByTagName("list"); // 참조 (그냥 아무 거나 xml 드가도 이 경우 있을 듯)
+                if (listTags.getLength() > 0) {
+                    List<Object> list = parseList((Element) listTags.item(0));
+                    def.addConstructorArg(list);
+                    continue;
+                }
 
-            // ref 속성
-            if (arg.hasAttribute("ref")) {
-                def.addConstructorArg(arg.getAttribute("ref"));
+                // ref 속성
+                if (arg.hasAttribute("ref")) {
+                    def.addConstructorArg(arg.getAttribute("ref"));
+                }
+            } catch (Exception e) {
+                System.err.println("⚠️ constructor-arg 파싱 실패: " + e.getMessage());
             }
         }
     }
@@ -106,33 +110,37 @@ public class XmlBeanDefinitionReader {
     private void parseProperties(Element beanElem, BeanDefinition def) throws Exception {
         NodeList props = beanElem.getElementsByTagName("property");
         for (int j = 0; j < props.getLength(); j++) {
-            Element prop = (Element) props.item(j);
-            String name = prop.getAttribute("name");
+            try {
+                Element prop = (Element) props.item(j);
+                String name = prop.getAttribute("name");
 
-            // PropertyValue 는 그냥 분리된 값을 객체로 묶어 던질 용도로 만든 object
-            if (prop.hasAttribute("ref")) {
-                def.addProperty(new PropertyValue(name, prop.getAttribute("ref")));
-                continue;
-            }
+                // PropertyValue 는 그냥 분리된 값을 객체로 묶어 던질 용도로 만든 object
+                if (prop.hasAttribute("ref")) {
+                    def.addProperty(new PropertyValue(name, prop.getAttribute("ref")));
+                    continue;
+                }
 
 
-            // child 에서 map 이나 list tag 식별
-            NodeList children = prop.getChildNodes();
-            for (int k = 0; k < children.getLength(); k++) {
-                if (!(children.item(k) instanceof Element)) continue;
-                Element child = (Element) children.item(k);
+                // child 에서 map 이나 list tag 식별
+                NodeList children = prop.getChildNodes();
+                for (int k = 0; k < children.getLength(); k++) {
+                    if (!(children.item(k) instanceof Element)) continue;
+                    Element child = (Element) children.item(k);
 
-                // 위에서 처럼 각 케이스로 분리해도 되고 switch 로 처리해도 되고 ~
-                switch (child.getTagName()) {
-                    case "map" -> {
-                        Map<String, String> map = parseMap(child);
-                        def.addProperty(new PropertyValue(name, map));
-                    }
-                    case "list" -> {
-                        List<Object> list = parseList(child);
-                        def.addProperty(new PropertyValue(name, list));
+                    // 위에서 처럼 각 케이스로 분리해도 되고 switch 로 처리해도 되고 ~
+                    switch (child.getTagName()) {
+                        case "map" -> {
+                            Map<String, String> map = parseMap(child);
+                            def.addProperty(new PropertyValue(name, map));
+                        }
+                        case "list" -> {
+                            List<Object> list = parseList(child);
+                            def.addProperty(new PropertyValue(name, list));
+                        }
                     }
                 }
+            } catch (Exception e) {
+                System.err.println("⚠️ property 파싱 실패: " + e.getMessage());
             }
         }
     }
@@ -143,8 +151,12 @@ public class XmlBeanDefinitionReader {
         Map<String, String> map = new LinkedHashMap<>();
         NodeList entries = mapElem.getElementsByTagName("entry");
         for (int k = 0; k < entries.getLength(); k++) {
-            Element entry = (Element) entries.item(k);
-            map.put(entry.getAttribute("key"), entry.getAttribute("value"));
+            try {
+                Element entry = (Element) entries.item(k);
+                map.put(entry.getAttribute("key"), entry.getAttribute("value"));
+            } catch (Exception e) {
+                System.err.println("⚠️ map entry 파싱 실패: " + e.getMessage());
+            }
         }
         return map;
     }
@@ -158,13 +170,17 @@ public class XmlBeanDefinitionReader {
             if (!(children.item(k) instanceof Element)) continue;
             Element item = (Element) children.item(k);
 
-            if ("bean".equals(item.getTagName())) {
-                String clazzName = item.getAttribute("class");
-                Class<?> clazz = Class.forName(clazzName);
-                Object obj = clazz.getDeclaredConstructor().newInstance();
-                items.add(obj);
-            } else if ("ref".equals(item.getTagName())) {
-                items.add(item.getAttribute("bean")); // bean ID
+            try {
+                if ("bean".equals(item.getTagName())) {
+                    String clazzName = item.getAttribute("class");
+                    Class<?> clazz = Class.forName(clazzName);
+                    Object obj = clazz.getDeclaredConstructor().newInstance();
+                    items.add(obj);
+                } else if ("ref".equals(item.getTagName())) {
+                    items.add(item.getAttribute("bean"));
+                }
+            } catch (Exception e) {
+                System.err.println("⚠️ 리스트 항목 파싱 실패: " + e.getMessage());
             }
         }
 

@@ -46,8 +46,11 @@ public class Main {
             ServletContainer container = (ServletContainer) context.getBean("servletContainer");
             CustomHttpServer server = new CustomHttpServer(8080, container);
 
-            server.run();
-
+            try {
+                server.run();
+            } finally {
+                context.close();
+            }
             Runtime.getRuntime().addShutdownHook(new Thread(() -> {
                 logger.info("Shutdown Hook 실행 중...");
                 context.close();

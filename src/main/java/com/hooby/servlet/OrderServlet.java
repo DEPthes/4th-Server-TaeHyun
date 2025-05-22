@@ -18,6 +18,11 @@ public class OrderServlet implements Servlet {
     @Override
     public void service(CustomHttpRequest req, CustomHttpResponse res) {
         Map<String, Object> body = req.getJsonBody();
+        if (body == null || !body.containsKey("userId") || !body.containsKey("amount")) {
+            res.setStatus(HttpStatus.BAD_REQUEST);
+            res.setBody("Missing required order fields");
+            return;
+        }
         orderService.createOrder(body);
         res.setStatus(HttpStatus.CREATED);
         res.setBody("Order Created");

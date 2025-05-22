@@ -17,7 +17,8 @@ public class DispatcherServlet {
 
     public DispatcherServlet(ServletMapper servletMapper,
                              ServletInitializer servletInitializer,
-                             FilterManager filterManager) {
+                             FilterManager filterManager
+    ) {
         this.servletMapper = servletMapper;
         this.servletInitializer = servletInitializer;
         this.filterManager = filterManager;
@@ -42,11 +43,16 @@ public class DispatcherServlet {
         }
 
         request.setPathParams(result.pathParams());
-        Servlet servlet = servletInitializer.getOrCreate(result.servletName());
-        logger.debug("✅ 매핑된 서블릿: {}", result.servletName());
 
-        FilterChain chain = new FilterChain(filterManager.getFilters(), servlet);
-        chain.doFilter(request, response);
+        try {
+            Servlet servlet = servletInitializer.getOrCreate(result.servletName());
+            logger.debug("✅ 매핑된 서블릿: {}", result.servletName());
+            FilterChain chain = new FilterChain(filterManager.getFilters(), servlet);
+            chain.doFilter(request, response);
+        } catch (IllegalArgumentException e) {
+            response.setStatus(HttpStatus.NOT_FOUND);
+            response.setBody("Servlet Not Found: " + e.getMessage());
+        }
 
         logger.debug("✅ 요청 처리 완료: {} → {}", request.getPath(), response.getStatus());
         return response;

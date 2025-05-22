@@ -2,6 +2,7 @@ package com.hooby.filter;
 
 import com.hooby.http.CustomHttpRequest;
 import com.hooby.http.CustomHttpResponse;
+import com.hooby.http.HttpStatus;
 import com.hooby.servlet.Servlet;
 
 import java.util.List;
@@ -21,7 +22,12 @@ public class FilterChain {
             Filter nextFilter = filters.get(index++);
             nextFilter.doFilter(request, response, this);
         } else {
-            servlet.service(request, response);
+            try {
+                servlet.service(request, response);
+            } catch (Exception e) {
+                response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+                response.setBody("Internal error: " + e.getMessage());
+            }
         }
     }
 }

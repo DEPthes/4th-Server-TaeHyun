@@ -93,6 +93,7 @@ public class UserServlet implements Servlet {
     }
 
     private void getUserById(String id, CustomHttpResponse res) throws Exception {
+        if (checkIdisNull(id, res)) return;
         var user = userService.getUserById(id);
         if (user == null) {
             res.setStatus(HttpStatus.NOT_FOUND);
@@ -105,6 +106,8 @@ public class UserServlet implements Servlet {
     }
 
     private void updateUser(String id, CustomHttpRequest req, CustomHttpResponse res) {
+        if (checkIdisNull(id, res)) return;
+
         try {
             userService.updateUser(id, req.getJsonBody());
             res.setStatus(HttpStatus.OK);
@@ -119,6 +122,8 @@ public class UserServlet implements Servlet {
     }
 
     private void patchUser(String id, CustomHttpRequest req, CustomHttpResponse res) {
+        if (checkIdisNull(id, res)) return;
+
         try {
             userService.patchUser(id, req.getJsonBody());
             res.setStatus(HttpStatus.OK);
@@ -130,6 +135,8 @@ public class UserServlet implements Servlet {
     }
 
     private void deleteUserById(String id, CustomHttpResponse res) {
+        if (checkIdisNull(id, res)) return;
+
         try {
             userService.deleteUser(id);
             res.setStatus(HttpStatus.OK);
@@ -169,5 +176,14 @@ public class UserServlet implements Servlet {
 
     public void cleanup() {
         logger.info("🔴 UserServlet 자원 해제됨");
+    }
+
+    private boolean checkIdisNull(String id, CustomHttpResponse res) {
+        if (id == null) {
+            res.setStatus(HttpStatus.BAD_REQUEST);
+            res.setBody("ID is required");
+            return true;
+        }
+        return false;
     }
 }

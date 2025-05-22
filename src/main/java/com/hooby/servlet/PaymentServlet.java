@@ -14,12 +14,20 @@ public class PaymentServlet implements Servlet {
 
     @Override
     public void service(CustomHttpRequest req, CustomHttpResponse res) {
-        String user = req.getQueryParams().get("user");
-        int amount = Integer.parseInt(req.getQueryParams().get("amount"));
+        try {
+            String user = req.getQueryParams().get("user");
+            String amountStr = req.getQueryParams().get("amount");
+            if (user == null || amountStr == null) throw new IllegalArgumentException("Missing parameters");
 
-        paymentService.pay(user, amount);
-        res.setStatus(HttpStatus.OK);
-        res.setBody("Payment Done");
+            int amount = Integer.parseInt(amountStr);
+            paymentService.pay(user, amount);
+
+            res.setStatus(HttpStatus.OK);
+            res.setBody("Payment Done");
+        } catch (Exception e) {
+            res.setStatus(HttpStatus.BAD_REQUEST);
+            res.setBody("Invalid request: " + e.getMessage());
+        }
     }
 
     public void init() {
