@@ -13,9 +13,9 @@ public class TransactionManager {
             if (connectionHolder.get() != null) throw new IllegalStateException("이미 트랜잭션이 시작됨");
             Connection conn = JdbcUtils.createConnection();
             connectionHolder.set(conn);
-            System.out.println("👍🏻 Transaction 시작");
+            System.out.println("🟢 Transaction 시작");
         } catch (Exception e) {
-            throw new RuntimeException("🖕🏻 트랜잭션 시작 실패", e);
+            throw new RuntimeException("🔴 트랜잭션 시작 실패", e);
         }
     }
 
