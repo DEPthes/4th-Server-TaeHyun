@@ -10,48 +10,18 @@ import org.slf4j.LoggerFactory;
 public class ServletContainer {
     private static final Logger logger = LoggerFactory.getLogger(ServletContainer.class);
 
-    private final ServletMapper servletMapper;
-    private final ServletInitializer servletInitializer;
-    private final FilterManager filterManager;
     private final ListenerManager listenerManager;
+    private final DispatcherServlet dispatcher;
 
-    public ServletContainer(
-            ServletMapper servletMapper,
-            ServletInitializer servletInitializer,
-            FilterManager filterManager,
-            ListenerManager listenerManager
-    ) {
-        this.servletMapper = servletMapper;
-        this.servletInitializer = servletInitializer;
-        this.filterManager = filterManager;
+    public ServletContainer(DispatcherServlet dispatcher, ListenerManager listenerManager) {
+        this.dispatcher = dispatcher;
         this.listenerManager = listenerManager;
-
-        System.out.println("🧩 생성자 주입됨: "
-                + "servletMapper=" + servletMapper.getClass().getSimpleName()
-                + ", servletInitializer=" + servletInitializer.getClass().getSimpleName()
-                + ", filterManager=" + filterManager.getClass().getSimpleName()
-                + ", listenerManager=" + listenerManager.getClass().getSimpleName());
+        logger.info("🧩 ServletContainer 생성자 주입됨");
     }
 
     public CustomHttpResponse dispatch(CustomHttpRequest request) {
-        // Refactor: 이게 사실 DispatcherServlet의 역할인데, 리팩터링을 하는게 낫지 않을까?
-        CustomHttpResponse response = new CustomHttpResponse();
-
-        ServletMapper.MappingResult result = servletMapper.map(request.getPath());
-
-        if (result == null) {
-            response.setStatus(HttpStatus.NOT_FOUND);
-            response.setBody("Not Found");
-            return response;
-        }
-
-        request.setPathParams(result.pathParams());
-        Servlet servlet = servletInitializer.getOrCreate(result.servletName());
-
-        FilterChain chain = new FilterChain(filterManager.getFilters(), servlet);
-        chain.doFilter(request, response);
-
-        return response;
+        logger.debug("ServletContainer: dispatch 진입 - {}", request.getPath());
+        return dispatcher.service(request);
     }
 
     public void init() {

@@ -39,4 +39,16 @@
             </map>
         </constructor-arg>
     </bean>
+
+    <bean id="dispatcherServlet" class="com.hooby.servlet.DispatcherServlet">
+        <constructor-arg ref="servletMapper"/>
+        <constructor-arg ref="servletInitializer"/>
+        <constructor-arg ref="filterManager"/>
+    </bean>
+
+    <bean id="servletContainer" class="com.hooby.servlet.ServletContainer"
+          init-method="init" destroy-method="cleanup">
+        <constructor-arg ref="dispatcherServlet"/>
+        <constructor-arg ref="listenerManager"/>
+    </bean>
 </beans>
