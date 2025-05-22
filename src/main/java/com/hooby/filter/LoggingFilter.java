@@ -12,6 +12,6 @@ public class LoggingFilter implements Filter {
     public void doFilter(CustomHttpRequest request, CustomHttpResponse response, FilterChain chain) {
         logger.info("→ [FILTER] Incoming request: {} {}", request.getMethod(), request.getPath());
         chain.doFilter(request, response);
-        logger.info("← [FILTER] Response status: {}", response.toHttpMessage().split(" ")[1]);
+        logger.info("← [FILTER] Response status: {}", response.getStatus());
     }
 }
