@@ -5,6 +5,7 @@ import com.hooby.aop.*;
 import com.hooby.db.JdbcUtils;
 import com.hooby.http.*;
 import com.hooby.ioc.*;
+import com.hooby.monitor.SystemResourceMonitor;
 import com.hooby.servlet.*;
 import com.hooby.tx.TransactionManager;
 import org.slf4j.Logger;
@@ -16,6 +17,9 @@ public class Main {
     public static void main(String[] args) {
         try {
             JdbcUtils.initSchema();
+
+            // 모니터링 스레드 실행
+            new Thread(new SystemResourceMonitor()).start();
 
             // ApplicationContext 초기화
             ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
